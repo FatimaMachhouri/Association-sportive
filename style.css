@@ -1,0 +1,114 @@
+
+.card{
+  background: #848484;
+  text-decoration: none;
+  height: 300px;
+  opacity: 0.9;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color : white;
+}
+
+a:hover, a:focus, a:active {
+    color: black;
+    font-size: 30px;
+}
+
+#formAddCategory {
+  background : #AFAFAF;
+}
+
+.right-panel-categorie {
+  background-image: url("pictures/backgroundCategory.png");
+}
+
+.right-panel-joueur {
+  background-image: url("pictures/backgroundPlayer.png");
+}
+
+#playerInformation {
+  font-family: cursive;
+}
+
+#playerInformation p {
+  font-size: 20px;
+}
+
+#button1 {
+	width:75px;
+	height:75px;
+	background:#fafafa;
+	box-shadow:2px 2px 8px #aaa;
+	font:bold 13px Arial;
+	border-radius:50%;
+	color:#555;
+}
+
+.table-striped{
+  width : 70%;
+  text-align: center;
+}
+
+.table-striped a {
+  color : black;
+}
+
+
+#teamInformation {
+  font-family: cursive;
+  text-align : center;
+}
+
+#titleTeamView2 {
+  font-family: cursive;
+  margin-left: 85px;
+}
+
+.teamTable {
+  margin : auto;
+}
+
+
+.boxPlayer {
+ width:175px;
+ height:230px;
+ background:white;
+ text-align : center;
+ font-family: cursive;
+}
+
+.boxPlayerInside {
+ width:145px;
+ height:145px;
+ margin:auto;
+ overflow:hidden;
+}
+
+hr {
+  border: none;
+  border-bottom: 3px solid #0000CD;
+}
+
+
+#titlePlayersView {
+  font-family: cursive;
+  color : #0000CD;
+  font-weight: bold;
+}
+
+#trashIcon {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+#linkPlayer {
+  color : black;
+}
+
+#linkPlayer:hover, #linkPlayer:focus, #linkPlayer:active {
+    color: red;
+    font-size: 20px;
+}
