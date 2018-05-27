@@ -131,10 +131,10 @@
                     <div class="col col-md-9">
                       <div class="form-check-inline form-check">
                         <label class="form-check-label ">
-                          <input type="radio" name="gender" class="form-check-input"> Femme
+                          <input type="radio" name="gender" value="F" class="form-check-input"> Féminin
                         </label>
                         <label class="form-check-label ">
-                          <input type="radio" name="gender" class="form-check-input"> Homme
+                          <input type="radio" name="gender" value="M" class="form-check-input"> Masculin
                         </label>
                       </div>
                     </div>
@@ -164,13 +164,9 @@
                     <div class="col-12 col-md-9"><input type="number" name="phoneNumber" placeholder="Numéro de téléphone" class="form-control"></div>
                   </div>
 
-                </form>
-              </div>
+                  <button type="submit" class="btn btn-primary btn-sm"> Ajouter </button>
 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary btn-sm">
-                  <i class="fa fa-dot-circle-o"></i> Ajouter
-                </button>
+                </form>
               </div>
 
             </div>

@@ -12,6 +12,7 @@
     }
 
     $currentSeason = getCurrentSeason();
+    
     if (isset($_POST['libCateg']) && isset($_POST['ageMinCateg']) && isset($_POST['ageMaxCateg'])) {
       $addCategorie = insertCategorie($_POST['libCateg'], $_POST['ageMinCateg'], $_POST['ageMaxCateg']);
     }
