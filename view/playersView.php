@@ -57,7 +57,7 @@
               else if ( $idCategoriePrevious != htmlspecialchars($data['identifiantCategorie']) ) {
                 echo "<br clear=left>";
                 $idCategoriePrevious = htmlspecialchars($data['identifiantCategorie']);
-                echo "<h1 id=\"titreVueJoueurs\">";
+                echo "<h1 id=\"titlePlayersView\">";
                 echo htmlspecialchars($data['libelleCategorie']);
                 echo "</h1>";
                 echo "<hr/>";
@@ -85,6 +85,83 @@
             }
             $licencesSeason->closeCursor();
           ?>
+
+
+          <!-- Form add player -->
+          <br clear=left>
+          <br/>
+
+          <div class="col-lg-6">
+            <div class="card">
+
+              <div class="card-header">
+                <strong>Ajouter un joueur</strong>
+              </div>
+
+              <div class="card-body card-block">
+                <form action = "../controller/players.php" method="post" class="form-horizontal">
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="text" name="firstnamePlayer" placeholder="Nom" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="text" name="namePlayer" placeholder="Prénom" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Sexe : </label></div>
+                    <div class="col col-md-9">
+                      <div class="form-check-inline form-check">
+                        <label class="form-check-label ">
+                          <input type="radio" name="gender" class="form-check-input"> Femme
+                        </label>
+                        <label class="form-check-label ">
+                          <input type="radio" name="gender" class="form-check-input"> Homme
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="date" name="birthday" placeholder="Date de naissance" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="text" name="address" placeholder="Rue" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="number" name="codePostal" placeholder="Code postal" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="text" name="city" placeholder="Ville" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="email" name="email" placeholder="Adresse mail" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="number" name="phoneNumber" placeholder="Numéro de téléphone" class="form-control"></div>
+                  </div>
+
+                </form>
+              </div>
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                  <i class="fa fa-dot-circle-o"></i> Ajouter
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <!-- Form add player -->
+
+
+
 
 
         </div> <!-- .content -->

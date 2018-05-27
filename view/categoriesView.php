@@ -17,6 +17,7 @@
       }   
     </script>
 
+
     <link rel="stylesheet" href="../template/assets/css/normalize.css">
     <link rel="stylesheet" href="../template/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../template/assets/css/font-awesome.min.css">
@@ -60,7 +61,7 @@
         {
       ?>
           <div class="col-sm-6 col-lg-3">
-            <div class="card text-white bg-flat-color-2">
+            <div id="boxCategory" class="card text-white bg-flat-color-2">
               <div class="card-body pb-0">
                 <h2> <?php echo htmlspecialchars($datasCategories['libelleCategorie']); ?> </h2>
                 <h6> Age minimum : <?php echo htmlspecialchars($datasCategories['ageMinCategorie']); ?> </h6>
@@ -83,10 +84,12 @@
                     ?>
                 </ul>
 
+
                 <form action = "categories.php?idCategoryUpdate=<?php echo htmlspecialchars($datasCategories['identifiantCategorie']); ?>" method="post" class="form-horizontal">
-                  <div class="col-12 col-md-9"><input type="text" name="valueName" class="form-control"><span class="help-block">Libellé</span></div>
-                  <button type="submit" class="btn btn-primary btn-sm"> Modifier </button>
+                  <div class="col-12 col-md-9"><input type="text" name="valueName" placeholder="Libellé" class="form-control"> </div>
+                  <button type="submit"> Modifier </button>
                 </form>
+
 
                 <div id="trashIcon"> <a href="categories.php?idCategory=<?php echo htmlspecialchars($datasCategories['identifiantCategorie']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a> </div>
               </div>
