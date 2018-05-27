@@ -5,6 +5,19 @@
     <meta charset="utf-8">
     <title>Joueurs de la saison</title>
 
+    <script type="text/javascript">
+      function visibilite(id) {
+        var targetElement;
+        targetElement = document.getElementById(id) ;
+        if (targetElement.style.display == "") {
+          targetElement.style.display = "none" ;
+          }
+          else {
+          targetElement.style.display = "" ;
+          }    
+      }   
+    </script>
+
     <link rel="stylesheet" href="../template/assets/css/normalize.css">
     <link rel="stylesheet" href="../template/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../template/assets/css/font-awesome.min.css">
@@ -91,8 +104,12 @@
           <br clear=left>
           <br/>
 
+          <p>
+            <input type="button" class="btn btn-default btn-lg btn-block" value="Ajouter un joueur" onclick="javascript:visibilite('formAddPlayer'); return false;" />
+          </p>
+
           <div class="col-lg-6">
-            <div class="card">
+            <div id="formAddPlayer" class="card" style="display: none;">
 
               <div class="card-header">
                 <strong>Ajouter un joueur</strong>
