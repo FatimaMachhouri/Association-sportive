@@ -2,5 +2,5 @@
 
 Projet Web
 
-Langage de programmation : php, Javascript
+Langage de programmation : php, js
 Framework : Bootstrap
