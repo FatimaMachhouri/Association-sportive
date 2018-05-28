@@ -46,6 +46,8 @@
         ?>
             <h1> Nom équipe : <?= htmlspecialchars($data['nomEquipe']) ?> </h1>
             <h1> Catégorie : <?= htmlspecialchars($data['libelleCategorie']) ?> </h1>
+            <h1> Entraineur : <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur'])   ?> </h1>
+
         <?php
           }
           $team->closeCursor();
@@ -79,6 +81,27 @@
               </tr>
         </tbody>
       </table>
+
+
+      <br clear=left>
+      <br clear=left>
+
+      <div class="col col-md-3"><label for="selectLg" class=" form-control-label"><h3>Ajouter un joueur</h3></label></div>
+      <div class="col-12 col-md-9">
+        <select class="form-control-lg form-control">
+          <option value="0">Selectionner nom du joueur à ajouter à l'équipe</option>
+          <?php
+            while ($data = $licenceToAdd->fetch())
+            {
+          ?>
+              <option> <?= htmlspecialchars($data['nomJoueur']) . " " . htmlspecialchars($data['prenomJoueur']) ?> </option>
+          <?php
+            }
+            $licenceToAdd->closeCursor();
+          ?>
+        </select>
+      </div>
+
 
     </div> <!-- .content -->
 
