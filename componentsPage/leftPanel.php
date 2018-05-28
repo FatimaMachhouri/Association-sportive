@@ -16,16 +16,22 @@
 
         <h3 class="menu-title">Saison actuelle</h3>
         <li>
-          <a href="../controller/season.php"> <i class="menu-icon fa fa-th"></i>Saisons</a>
+          <a href=""> <i class="menu-icon fa fa-info-circle"></i>Informations de la saison</a>
         </li>
         <li>
           <a href="../controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i>Equipes</a>
         </li>
         <li>
-          <a href="../controller/players.php"> <i class="menu-icon fa fa-users"></i>Licenciés</a>
+          <a href="../controller/players.php"> <i class="menu-icon fa fa-file-text"></i>Licenciés</a>
         </li>
 
         <h3 class="menu-title">Saisons antérieures</h3>
+        <li>
+          <a href="../controller/season.php"> <i class="menu-icon fa fa-th"></i>Saisons</a>
+        </li>
+        <li>
+          <a href=""> <i class="menu-icon fa fa-users"></i>Joueurs</a>
+        </li>
 
       </ul>
 
