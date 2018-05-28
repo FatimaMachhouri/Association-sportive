@@ -19,7 +19,7 @@
 <body>
 
 
-  <?php include("../componentsPage/leftPanel.php"); ?>
+  <?php include("../componentsPage/leftPanel.html"); ?>
 
 
   <!-- Right Panel -->
