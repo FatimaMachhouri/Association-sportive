@@ -53,10 +53,32 @@
           <p> Téléphone : <strong> <?php echo htmlspecialchars($dataPlayer['telephoneJoueur']); ?> </strong> </p>
         </div>
 
+        <br clear=left>
+        <form action = "player.php?idPlayer=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>" method="post">
+          <div class="col-12 col-md-9"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. $dataPlayer['nomJoueur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="text" name="namePlayerUp" <?php echo 'value="'. $dataPlayer['prenomJoueur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="text" name="genderPlayerUp" <?php echo 'value="'. $dataPlayer['sexeJoueur'] .'"'; ?> placeholder="Sexe" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="text" name="addressPlayerUp" <?php echo 'value="'. $dataPlayer['rueJoueur'] .'"'; ?> placeholder="Rue" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="number" name="codePostalJoueurUp" <?php echo 'value="'. $dataPlayer['codePostalJoueur'] .'"'; ?> placeholder="Code postal" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="text" name="cityPlayerUp" <?php echo 'value="'. $dataPlayer['villeJoueur'] .'"'; ?> placeholder="Ville" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="email" name="emailPlayerUp" <?php echo 'value="'. $dataPlayer['emailJoueur'] .'"'; ?> placeholder="email" class="form-control"> </div>
+          <div class="col-12 col-md-9"><input type="number" name="numberPlayerUp" <?php echo 'value="'. $dataPlayer['telephoneJoueur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
+          <button type="submit"> Modifier </button>
+        </form>
+
+        <br clear=left>
+        <button> <td><a href="listPlayers.php?idPlayerDeleteInd=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>"> Supprimer le joueur </a></td> </button>
+
+
       <?php
         }
         $player->closeCursor();
       ?>
+
+
+
+
 
       </br>
       <h2> Licences du joueur </h2>

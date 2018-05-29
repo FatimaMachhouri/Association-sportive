@@ -54,15 +54,15 @@ a:hover, a:focus, a:active {
   color : black;
 }
 
-
 #teamInformation {
   font-family: cursive;
   text-align : center;
 }
 
+
 #titleTeamView2 {
   font-family: cursive;
-  margin-left: 85px;
+  margin-left: 85px
 }
 
 .teamTable {
@@ -110,4 +110,23 @@ hr {
 #linkPlayer:hover, #linkPlayer:focus, #linkPlayer:active {
     color: red;
     font-size: 20px;
+}
+
+
+.table-dark a:hover, a:focus, a:active {
+  color: green;
+  font-size: 20px;
+}
+
+.table {
+  text-align : center;
+}
+
+.titleListPlayers {
+  text-align : center;
+  color : white;
+}
+
+.right-panel-listPlayers {
+  background-image: url("pictures/backgroundListPlayers.png");
 }

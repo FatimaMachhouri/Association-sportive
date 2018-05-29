@@ -51,13 +51,16 @@
             <li>
               <a href="controller/players.php"> <i class="menu-icon fa fa-file-text"></i> Licenciés </a>
             </li>
+            <li>
+              <a href="controller/coaches.php"> <i class="menu-icon fa fa-user"></i> Entraineurs </a>
+            </li>
 
             <h3 class="menu-title"> Saisons antérieures </h3>
             <li>
               <a href=""> <i class="menu-icon fa fa-th"></i> Saisons </a>
             </li>
             <li>
-              <a href=""> <i class="menu-icon fa fa-users"></i> Joueurs </a>
+              <a href="controller/listPlayers.php"> <i class="menu-icon fa fa-users"></i> Joueurs </a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->

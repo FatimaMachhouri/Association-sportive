@@ -8,7 +8,7 @@
     $season = $db->query(' SELECT "dateDebutSaison", "dateFinSaison" FROM "AssociationSportive"."Saison" WHERE now() >= "dateDebutSaison" AND now() <= "dateFinSaison" ');
     return $season;
   }//getSaisonActuelle
-  
+
 
   function getPlayer($idPlayer) {
     $db = dbConnexion();
@@ -24,3 +24,11 @@
     $player->execute(array($idPlayer));
     return $player;
   }//getLicencesJoueur
+
+
+  function updatePlayer($idPlayer, $nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone) {
+    $db = dbConnexion();
+    $player = $db->prepare ( ' UPDATE "AssociationSportive"."Joueur" SET "nomJoueur" = ?, "prenomJoueur" = ?, "dateNaissanceJoueur" = ?, "sexeJoueur" = ?, "rueJoueur" = ?, "codePostalJoueur" = ?, "villeJoueur" = ?, "emailJoueur" = ?, "telephoneJoueur" = ? WHERE "identifiantJoueur" = ? ');
+    $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone, $idPlayer));
+    return $player;
+  }//updatePlayer
