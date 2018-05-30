@@ -30,7 +30,7 @@
             <div class="login-content">
                 <div class="login-logo">
                     <a href="index.html">
-                        <img class="align-content" src="pictures/logoLogin.png" alt="">
+                        <img class="align-content" src="../pictures/logoLogin.png" alt="logo ballon vert">
                     </a>
                 </div>
                 <div class="login-form">
