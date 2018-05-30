@@ -3,10 +3,10 @@
   require('../model/loginModel.php');
 
   $pswd = testLogin($_POST['loginEmail']);
-  if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) && $pswd == $_POST['loginPassword'] ) {
+  if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) && ($pswd == $_POST['loginPassword']) ) {
       require('../index.php');
   }
 
   else {
-    require('../view/loginView.php');
+    require('../index.php');
   }
