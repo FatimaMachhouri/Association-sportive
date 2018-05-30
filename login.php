@@ -1,13 +1,19 @@
 
 <?php
 
-  require('../model/coaches.php');
+  require('loginModel.php');
 
 
-if bon mot de passe :
-  require('../index.php');
-  +créer cookie
-  +stocker son identifiant
+  if ( isset($_POST['loginEmail']) ) {
 
-sinon
-  require('../pageLogin.php');
+    $pswdTest = testLogin($_POST['loginEmail']);
+
+    if ( $pswdTest == $_POST['loginPassword']) ) {
+      require('index.php');
+    }
+
+  }
+
+  else {
+    require('pageLogin.php');
+  }
