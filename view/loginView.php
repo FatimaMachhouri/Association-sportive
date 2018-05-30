@@ -35,7 +35,7 @@
                 </div>
                 <div class="login-form">
 
-                    <form action = "login.php" method="post">
+                    <form action = "../controller/login.php" method="post">
                         <div class="form-group">
                             <label>Adresse mail</label>
                             <input name="loginEmail" type="email" class="form-control" placeholder="Adresse mail">

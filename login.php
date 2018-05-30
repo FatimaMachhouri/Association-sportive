@@ -1,19 +1,19 @@
-
 <?php
 
-  require('loginModel.php');
+  require('../model/loginModel.php');
 
+  if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
+    $pswd = testLogin($_POST['loginEmail']);
 
-  if ( isset($_POST['loginEmail']) ) {
-
-    $pswdTest = testLogin($_POST['loginEmail']);
-
-    if ( $pswdTest == $_POST['loginPassword']) ) {
-      require('index.php');
+    if ($pswd == $_POST['loginPassword']) {
+      require('../index.php');
+    }
+    else {
+      require('../view/loginView.php');
     }
 
   }
 
   else {
-    require('pageLogin.php');
+    require('../view/loginView.php');
   }

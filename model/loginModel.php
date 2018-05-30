@@ -1,5 +1,4 @@
-<?php include("connexionDB.php"); ?>
-
+<?php include("../connexionDB.php"); ?>
 
 <?php
 
