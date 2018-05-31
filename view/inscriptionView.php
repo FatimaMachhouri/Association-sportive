@@ -6,7 +6,6 @@
     <title>Inscription</title>
 
 
-
               <div class="card-header">
                 <strong>Inscription</strong>
               </div>
@@ -37,9 +36,22 @@
 
                 </form>
 
+
+
+                <form action = "../controller/inscription.php" method="post" class="form-horizontal">
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="email" name="emailConnexion" placeholder="Adresse mail" class="form-control"></div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-12 col-md-9"><input type="password" name="passwordConnexion" placeholder="Mot de passe" class="form-control"></div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-sm"> Se connecter </button>
+
+                </form>
           <!-- Form add coach -->
-
-
 
 
 </body>
