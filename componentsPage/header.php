@@ -7,7 +7,7 @@
       <div class="header-left">
 
         <div class="header-left">
-          <h4> Utilisateur <?php echo $_COOKIE['prenomCookie'] . " " . $_COOKIE['nomCookie']; ?> </h4>
+          <h4> Utilisateur </h4>
         </div>
 
         <?php

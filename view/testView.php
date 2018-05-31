@@ -42,10 +42,13 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li class="active">s
               <a href=""> <i class="menu-icon fa fa-dashboard"></i> Deconnexion </a>
             </li>
             <h3 class="menu-title"> Saison actuelle </h3>
+            <li>
+              <a href="index.php"> <i class="menu-icon fa fa-align-right"></i> Informations </a>
+            </li>
             <li>
               <a href="controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i> Equipes </a>
             </li>
@@ -82,7 +85,7 @@
             <div class="header-left">
 
               <div class="header-left">
-                <h4> Utilisateur  </h4>
+                <h4> Utilisateur </h4>
               </div>
 
               <?php
