@@ -5,8 +5,8 @@
 
 
     if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
-      require('categories.php');
+      require('../view/categoriesView.php');
     }
     else {
-      require('login.php');
+      require('../view/loginView.php');
     }
