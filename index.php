@@ -43,7 +43,7 @@
             </li>
             <h3 class="menu-title"> Saison actuelle </h3>
             <li>
-              <a href="controller/login.php"> <i class="menu-icon fa fa-info-circle"></i> Page de login </a>
+              <a href="controller/inscription.php"> <i class="menu-icon fa fa-info-circle"></i> Inscription </a>
             </li>
             <li>
               <a href="controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i> Equipes </a>
