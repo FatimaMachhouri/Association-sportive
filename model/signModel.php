@@ -2,6 +2,7 @@
 
 <?php
 
+
   function getCurrentSeason() {
     $db = dbConnexion();
     $season = $db->query(' SELECT "dateDebutSaison", "dateFinSaison" FROM "AssociationSportive"."Saison" WHERE now() >= "dateDebutSaison" AND now() <= "dateFinSaison" ');
@@ -14,3 +15,18 @@
     $coach->execute(array($firstname, $name, $email, $telephone, $password));
     return $coach;
   }//insertCoach
+
+
+  function testPassword($email) {
+    $db = dbConnexion();
+    $coach = $db->prepare ( ' SELECT "password" FROM "AssociationSportive"."Entraineur" WHERE "emailEntraineur" = ? ');
+    $coach->execute(array($email));
+    return $coach;
+  }//testPassword
+
+
+  function getCoaches() {
+    $db = dbConnexion();
+    $coaches = $db->query(' SELECT * FROM "AssociationSportive"."Entraineur" ORDER BY "nomEntraineur" ');
+    return $coaches;
+  }//function getCoaches

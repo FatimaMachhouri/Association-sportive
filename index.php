@@ -39,11 +39,11 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active">
-              <a href="../index.php"> <i class="menu-icon fa fa-dashboard"></i> Page d'accueil </a>
+              <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i> Page d'accueil </a>
             </li>
             <h3 class="menu-title"> Saison actuelle </h3>
             <li>
-              <a href="controller/inscription.php"> <i class="menu-icon fa fa-info-circle"></i> Inscription </a>
+              <a href="controller/sign.php"> <i class="menu-icon fa fa-info-circle"></i> Inscription </a>
             </li>
             <li>
               <a href="controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i> Equipes </a>
