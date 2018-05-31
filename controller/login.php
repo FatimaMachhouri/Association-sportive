@@ -5,9 +5,9 @@
 
 
     if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
-      require('../index.php');
+      require('../view/loginView.php');
     }
 
     else {
-      require('../view/loginView.php');
+      require('../index.php');
     }
