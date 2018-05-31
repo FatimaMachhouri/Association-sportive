@@ -40,7 +40,7 @@
       <img class="align-content" src="pictures/logoLogin.png" alt="Logo ballon vert">
     </div>
     <div class="card-header">
-      <h1>Se connecter</h1>
+      <h1> Se connecter</h1>
     </div>
     <div class="login-form">
       <form action = "index.php" method="post" class="form-horizontal">
