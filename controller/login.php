@@ -5,7 +5,7 @@
 
 
     if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
-      require('../view/coachesView.php');
+      require('../index.php');
     }
 
     else {
