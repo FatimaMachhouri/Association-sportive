@@ -6,8 +6,8 @@
 
     $currentSeason = getCurrentSeason();
 
-  if ( isset($_COOKIE['identifiantCookie']) && isset($_COOKIE['nomCookie']) && isset($_COOKIE['prenomCookie']) ) {
-    require('view/testView.php');
+  if ( isset($_COOKIE['identifiantCookie']) ) {
+    require('view/homeView.php');
   }
   else {
       $i = 0; //permet de ne pas afficher 2 fois la vue
@@ -28,7 +28,7 @@
 
             setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 60, null, null, false, true);
 
-            require('view/testView.php');
+            require('view/homeView.php');
             $i = 1;
           }
 

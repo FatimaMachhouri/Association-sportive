@@ -25,6 +25,7 @@
 
   <div id="right-panel" class="right-panel right-panel-equipe">
 
+    <!--> on include le squelette de la page <!-->
     <?php include("../componentsPage/header.php"); ?>
 
     <div class="breadcrumbs">
@@ -40,6 +41,7 @@
 
     <div class="content mt-3">
 
+      <!--> on affiche les informations de l'équipe s<!-->
       <div id="teamInformation">
         <?php
           while ($data = $team->fetch()) {
@@ -54,6 +56,8 @@
         ?>
       </div>
 
+
+      <!--> on affiche les licenciés de l'équipe en question <!-->
       </br>
         <h2 id="titleTeamView2"> Joueurs de l'équipe </h2>
       </br>

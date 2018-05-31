@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <title>Authentification</title>
 
+
+    <!-- fonction qui permet de faire apparait et disparait au clic -->
     <script type="text/javascript">
       function visibilite(id) {
         var targetElement;
@@ -53,10 +55,13 @@
 
         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Se connecter</button>
 
+        <!--Pour permettre à quelqu'un soit de se connecter (ci-dessus) soit de s'inscrire (ci-dessous) -->
         <div class="register-link m-t-15 text-center">
           <p>Pas encore de compte ?</p>
         </div>
 
+
+        <!-- on fait appel à la fonction js écrite plus haut pour afficher le formulaire d'inscription (par défaut cachés) -->
         <div class="register-link m-t-15 text-center">
           <input id="button1" type="button" value="Incrivez-vous" onclick="javascript:visibilite('signUp'); return false;" />
         </div>
@@ -66,7 +71,7 @@
   </div>
 
 
-
+<!-- Formulaire d'inscription -->
   <div class="login-content">
     <div id="signUp" style="display: none;">
       <div class="login-content">

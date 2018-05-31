@@ -4,6 +4,8 @@
   <meta charset="utf-8">
 
     <title>Équipes par categorie</title>
+
+    <!-- fonction javascript permettant d'afficher et de faire disparaitre un élément -->
     <script type="text/javascript">
       function visibilite(id) {
         var targetElement;
@@ -56,6 +58,7 @@
 
     <div class="content mt-3">
 
+      <!-- On affiche les équipes par catégorie -->
       <?php $teamsTmp = $teams->fetchAll();
         while ($datasCategories = $categories->fetch())
         {
@@ -103,6 +106,8 @@
       ?>
 
 
+
+      <!-- Formulaire pour ajouter une catégorie avec son nom, age début et age fin -->
       <p>
         <input id="button1" type="button" value="+" onclick="javascript:visibilite('formAddCategory'); return false;" />
       </p>

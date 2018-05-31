@@ -1,4 +1,4 @@
-
+<!-- en-tête de chaque page -->
 <header id="header" class="header">
 
   <div class="header-menu">

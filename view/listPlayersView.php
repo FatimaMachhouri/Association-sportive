@@ -32,6 +32,7 @@
 
 <body>
 
+  <!-- comme cette élément de code est commune à plusieurs pages, on a factorisé du code pour ne pas avoir à re écrire le même code -->
     <?php include("../componentsPage/leftPanel.html"); ?>
 
 
@@ -60,7 +61,7 @@
           </br>
 
 
-          <!-- Form add player -->
+          <!-- Formulaire d'ajout d'un joueur -->
           <br clear=left>
           <br/>
 
@@ -135,6 +136,8 @@
 
           <br>
 
+
+          <!-- On affiche la liste des joueurs -->
           <table class="table table-hover table-dark">
             <thead>
               <tr>

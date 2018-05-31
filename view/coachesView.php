@@ -97,6 +97,8 @@
           <br clear=left>
 
 
+
+          <!-- affichier les entraineurs de la saison actuelle avec toutes ses informations -->
           <?php
             while ($data = $coachesSeason->fetch())
             {

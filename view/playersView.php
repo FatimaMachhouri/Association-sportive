@@ -57,6 +57,7 @@
             $idCategoriePrevious = "";
             $index = 0;
 
+            //on affiche les licenciés de la saison par catégorie
             while ($data = $licencesSeason->fetch())
             {
               if ($index == 0) {
@@ -172,10 +173,6 @@
             </div>
           </div>
           <!-- Form add player -->
-
-
-
-
 
         </div> <!-- .content -->
 

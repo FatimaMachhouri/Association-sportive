@@ -1,5 +1,6 @@
 <?php
 
+//Connexion à la base de données pgSQL sur Heroku
 function dbConnexion() {
   try
   {
