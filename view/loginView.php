@@ -38,11 +38,11 @@
                     <form action = "../controller/login.php" method="post">
                         <div class="form-group">
                             <label>Adresse mail</label>
-                            <input name="loginEmail" type="email" class="form-control" placeholder="Adresse mail">
+                            <input name="loginEmail" type="email">
                         </div>
                         <div class="form-group">
                             <label>Mot de passe</label>
-                            <input name="loginPassword" type="password" class="form-control" placeholder="Mot de passe">
+                            <input name="loginPassword" type="password">
                         </div>
 
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Se connecter</button>
