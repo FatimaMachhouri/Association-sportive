@@ -4,11 +4,9 @@
   require('../model/loginModel.php');
 
 
-    require('../view/loginView.php');
-
-    while ( !(isset($_POST['loginEmail'])) && !(isset($_POST['loginPassword'])) ) {
-      require('../view/loginView.php');
+    if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
+      require('categories.php')
     }
-
-
-    require('../index.php')
+    else {
+      require('login.php');
+    }
