@@ -19,13 +19,13 @@
       }   
     </script>
 
-    <link rel="stylesheet" href="../template/assets/css/normalize.css">
-    <link rel="stylesheet" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../template/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="../template/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../template/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="../template/assets/scss/style.css">
+    <link rel="stylesheet" href="template/assets/css/normalize.css">
+    <link rel="stylesheet" href="template/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="template/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="template/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="template/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="template/assets/scss/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
@@ -35,13 +35,13 @@
 
   <div class="login-content">
     <div class="login-logo">
-      <img class="align-content" src="../pictures/logoLogin.png" alt="Logo ballon vert">
+      <img class="align-content" src="pictures/logoLogin.png" alt="Logo ballon vert">
     </div>
     <div class="card-header">
       <h1>Se connecter</h1>
     </div>
     <div class="login-form">
-      <form action = "../controller/sign.php" method="post" class="form-horizontal">
+      <form action = "index.php" method="post" class="form-horizontal">
         <div class="form-group">
           <label>Adresse mail</label>
           <input type="email" name="emailConnexion" placeholder="Adresse mail" class="form-control">
@@ -74,7 +74,7 @@
           <h1>S'inscrire</h1>
         </div>
         <div class="login-form">
-          <form action = "../controller/sign.php" method="post" class="form-horizontal">
+          <form action = "index.php" method="post" class="form-horizontal">
             <div class="form-group">
               <label>Nom</label>
               <input type="text" name="firstNameCoachInscri" placeholder="Nom" class="form-control">

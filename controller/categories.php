@@ -3,6 +3,7 @@
 
   require('../model/categoryModel.php');
 
+
     if ( isset($_GET['idCategory']) ) {
       $deleteCategory = deleteCategory($_GET['idCategory']);
     }
@@ -12,7 +13,7 @@
     }
 
     $currentSeason = getCurrentSeason();
-    
+
     if (isset($_POST['libCateg']) && isset($_POST['ageMinCateg']) && isset($_POST['ageMaxCateg'])) {
       $addCategorie = insertCategorie($_POST['libCateg'], $_POST['ageMinCateg'], $_POST['ageMaxCateg']);
     }

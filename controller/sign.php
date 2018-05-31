@@ -3,8 +3,9 @@
 
   require('../model/signModel.php');
 
-    $i = 0; //permet de ne pas afficher 2 fois la vue
     $currentSeason = getCurrentSeason();
+
+    $i = 0; //permet de ne pas afficher 2 fois la vue
 
     if ( isset($_POST['firstNameCoachInscri']) && isset($_POST['nameCoachInscr']) && isset($_POST['emailCoachInscr']) && isset($_POST['phoneNumberCoachInscr']) && isset($_POST['passwordInscr']) ) {
       $addCoach = inscription( $_POST['firstNameCoachInscri'], $_POST['nameCoachInscr'], $_POST['emailCoachInscr'], $_POST['phoneNumberCoachInscr'], hash('sha512', $_POST['passwordInscr']) );
@@ -18,15 +19,17 @@
 
       while ($data = $pswd->fetch())
       {
-        if ( strcmp( $data['password'], hash('sha512', $pswd2) ) == 0 )  {
+        if ( strcmp( $data['password'], hash('sha512', $pswd2) ) == 0 && $i !=1)  {
 
-          $coachesSeason = getCoaches();
-          require('../view/coachesView.php');
+          setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 60, null, null, false, true);
+          setcookie('nomCookie', $data['nomEntraineur'], time() + 60, null, null, false, true);
+          setcookie('prenomCookie', $data['prenomEntraineur'], time() + 60, null, null, false, true);
+
+          require('../view/testView.php');
           $i = 1;
         }
 
       }
-
 
     }
 

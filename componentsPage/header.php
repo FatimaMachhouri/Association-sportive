@@ -3,7 +3,13 @@
 
   <div class="header-menu">
     <div class="col-sm-7">
+
       <div class="header-left">
+
+        <div class="header-left">
+          <h4> Utilisateur <?php echo $_COOKIE['prenomCookie'] . " " . $_COOKIE['nomCookie']; ?> </h4>
+        </div>
+
         <?php
         while ($datesSeason = $currentSeason->fetch())
         {
@@ -15,6 +21,7 @@
         $currentSeason->closeCursor();
         ?>
       </div>
+
     </div>
   </div>
 
