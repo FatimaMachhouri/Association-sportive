@@ -5,7 +5,13 @@
 
 
     if ( isset($_POST['loginEmail']) && isset($_POST['loginPassword']) ) {
-      require('../view/categoriesView.php');
+      $pswd = testLogin($_POST['loginEmail']);
+      if ($pswd == $_POST['loginPassword']) {
+        require('../view/categoriesView.php');
+      }
+      else {
+        require('../view/loginView.php');
+      }
     }
     else {
       require('../view/loginView.php');
