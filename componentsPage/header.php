@@ -11,16 +11,7 @@
           <h4> Utilisateur </h4>
         </div>
 
-        <?php
-        while ($datesSeason = $currentSeason->fetch())
-        {
-        ?>
-          <strong> Saison : <?php echo htmlspecialchars($datesSeason['dateDebutSaison']); ?>
-          / <?php echo htmlspecialchars($datesSeason['dateFinSaison']); ?> </strong>
-        <?php
-        }
-        $currentSeason->closeCursor();
-        ?>
+      
       </div>
 
     </div>

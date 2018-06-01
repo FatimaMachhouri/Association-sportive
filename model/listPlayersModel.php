@@ -3,13 +3,6 @@
 <?php
 
 
-  function getCurrentSeason() {
-    $db = dbConnexion();
-    $season = $db->query(' SELECT "dateDebutSaison", "dateFinSaison" FROM "AssociationSportive"."Saison" WHERE now() >= "dateDebutSaison" AND now() <= "dateFinSaison" ');
-    return $season;
-  }//getSaisonActuelle
-
-
   function getAllPlayers() {
     $db = dbConnexion();
     $players = $db->query(' SELECT * FROM "AssociationSportive"."Joueur" ORDER BY "nomJoueur" ');

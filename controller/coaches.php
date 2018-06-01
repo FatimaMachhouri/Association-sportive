@@ -3,10 +3,14 @@
 
   require('../model/coachesModel.php');
 
-    $currentSeason = getCurrentSeason();
 
-
-
+  if ( empty($_COOKIE['identifiantCookie']) ) {
+    //on redirige vers le controller qui fera le traitement
+    header('Location: ../index.php');
+    exit();
+  }
+  
+  else {
     if ( isset($_GET['idCoachUpdate']) ) {
       if(isset($_POST['firstnameCoachUp'])) {$updateCoach = updateCoachFirstname($_GET['idCoachUpdate'], $_POST['firstnameCoachUp']);}
       if(isset($_POST['nameCoachUp'])) {$updateCoach = updateCoachName($_GET['idCoachUpdate'], $_POST['nameCoachUp']); }
@@ -26,4 +30,5 @@
     $coachesSeason = getCoaches();
 
 
-  require('../view/coachesView.php');
+    require('../view/coachesView.php');
+  }

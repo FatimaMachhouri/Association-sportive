@@ -2,12 +2,6 @@
 
 <?php
 
-  function getCurrentSeason() {
-    $db = dbConnexion();
-    $season = $db->query(' SELECT "dateDebutSaison", "dateFinSaison" FROM "AssociationSportive"."Saison" WHERE now() >= "dateDebutSaison" AND now() <= "dateFinSaison" ');
-    return $season;
-  }//getSaisonActuelle
-
 
   function inscription($firstname, $name, $email, $telephone, $password) {
     $db = dbConnexion();
