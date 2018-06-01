@@ -11,7 +11,9 @@
   else {
 
     if ( isset($_COOKIE['identifiantCookie']) ) {
-      require('view/homeView.php');
+      //require('view/homeView.php');
+      header('Location: controller/categories.php');
+
     }
     else {
       $i = 0; //permet de ne pas afficher 2 fois la vue
@@ -27,9 +29,9 @@
           {
             if ( strcmp( $data['password'], hash('sha512', $pswd2) ) == 0 && $i !=1)  {
               //on crypte l'identifiant de l'entraineur qu'on récupère dans le cookie
-              $data['identifiantEntraineur'] = hash('sha512', $data['identifiantEntraineur']);
+              //$data['identifiantEntraineur'] = hash('sha512', $data['identifiantEntraineur']);
               setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 60*60*2);
-              require('view/homeView.php');
+              header('Location: controller/categories.php');
               $i = 1;
               }
           }

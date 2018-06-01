@@ -26,3 +26,23 @@
     $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone, $idPlayer));
     return $player;
   }//updatePlayer
+
+
+  function addLicence($idPlayer, $idSeason, $idTeam) {
+    $db = dbConnexion();
+    $player = $db->prepare ( ' INSERT INTO "AssociationSportive"."Licence" ("identifiantJoueur", "identifiantSaison", "identifiantEquipe") VALUES (?,?,?) ');
+    $player->execute(array($idPlayer, $idSeason, $idTeam));
+    return $player;
+  }
+
+  function getSeasons() {
+    $db = dbConnexion();
+    $seasons = $db->query(' SELECT * FROM "AssociationSportive"."Saison" ORDER BY "dateDebutSaison" DESC');
+    return $seasons;
+  }//function getSeasons
+
+  function getTeams() {
+      $db = dbConnexion();
+      $teams = $db->query(' SELECT * FROM "AssociationSportive"."Equipe" ORDER BY "nomEquipe" ');
+      return $teams;
+  }//function getTeams

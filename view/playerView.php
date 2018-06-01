@@ -3,7 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Joueur</title>
-
+    <script type="text/javascript">
+      function visibilite(id) {
+        var targetElement;
+        targetElement = document.getElementById(id) ;
+        if (targetElement.style.display == "") {
+          targetElement.style.display = "none" ;
+          }
+          else {
+          targetElement.style.display = "" ;
+          }    
+      }   
+    </script>
     <link rel="stylesheet" href="../template/assets/css/normalize.css">
     <link rel="stylesheet" href="../template/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../template/assets/css/font-awesome.min.css">
@@ -56,6 +67,7 @@
 
         <br clear=left>
 
+        <?php $identPlayer ?>
         <!-- Formulaire de modification des données du joueur -->
         <form class = "form-group" action = "player.php?idPlayer=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>" method="post">
           <div class="col-12 col-md-9"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. $dataPlayer['nomJoueur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
@@ -67,6 +79,7 @@
           <div class="col-12 col-md-9"><input type="text" name="cityPlayerUp" <?php echo 'value="'. $dataPlayer['villeJoueur'] .'"'; ?> placeholder="Ville" class="form-control"> </div>
           <div class="col-12 col-md-9"><input type="email" name="emailPlayerUp" <?php echo 'value="'. $dataPlayer['emailJoueur'] .'"'; ?> placeholder="email" class="form-control"> </div>
           <div class="col-12 col-md-9"><input type="number" name="numberPlayerUp" <?php echo 'value="'. $dataPlayer['telephoneJoueur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
+          <?php $identPlayer = $dataPlayer['identifiantJoueur']; ?>
           <button type="submit"> Modifier </button>
         </form>
 
@@ -113,6 +126,51 @@
             $playerLicences->closeCursor();
           ?>
       </table>
+
+
+      <br clear = left>
+      <button type="button" class="btn btn-success" onclick="javascript:visibilite('formAddLicence'); return false;">Ajouter une licence</button>
+
+      <div class="col-lg-6">
+        <div id="formAddLicence" class="card" style="display: none;">
+          <div class="card-header">
+            <strong>Licencier le joueur</strong>
+          </div>
+          <div class="card-body card-block">
+            <form action = "../controller/player.php?idPlayer=<?php echo $identPlayer; ?>" method="post" class="form-horizontal">
+
+              <select name="seasonPlayerAdd" class="form-control-lg form-control">
+                <option value="0">Selectionner la saison</option>
+                <?php
+                  while ($data = $seasonLicence->fetch())
+                  {
+                ?>
+                    <option <?php echo 'value="'. $data['identifiantSaison'] .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
+                <?php
+                  }
+                  $seasonLicence->closeCursor();
+                ?>
+              </select>
+
+              <select name="teamPlayerAdd" class="form-control-lg form-control">
+                <option value="0">Selectionner l'équipe</option>
+                <?php
+                  while ($data = $teamLicence->fetch())
+                  {
+                ?>
+                    <option <?php echo 'value="'. $data['identifiantEquipe'] .'"'; ?> > <?= htmlspecialchars($data['nomEquipe']) ?> </option>
+                <?php
+                  }
+                  $teamLicence->closeCursor();
+                ?>
+              </select>
+
+              <button type="submit" class="btn btn-primary btn-sm"> Licencier </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
 
 
     </div> <!-- .content -->
