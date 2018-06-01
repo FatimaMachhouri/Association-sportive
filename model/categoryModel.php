@@ -41,3 +41,25 @@
     $category->execute(array($valueName, $idCateg));
     return $category;
   }//updateCategory
+
+
+  function insertTeam($name, $season, $categorie, $entraineur) {
+    $db = dbConnexion();
+    $team = $db->prepare ( ' INSERT INTO "AssociationSportive"."Equipe" ("nomEquipe", "identifiantSaison", "identifiantCategorie", "identifiantEntraineur") VALUES (?,?,?,?) ');
+    $team->execute(array($name, $season, $categorie, $entraineur));
+    return $team;
+  }
+
+
+  function getSeasons() {
+    $db = dbConnexion();
+    $seasons = $db->query(' SELECT * FROM "AssociationSportive"."Saison" ORDER BY "dateDebutSaison" DESC');
+    return $seasons;
+  }//function getSeasons
+
+
+  function getCoaches() {
+    $db = dbConnexion();
+    $coaches = $db->query(' SELECT * FROM "AssociationSportive"."Entraineur" ORDER BY "nomEntraineur" ');
+    return $coaches;
+  }//function getSeasons

@@ -127,6 +127,73 @@
           </div>
         </div>
 
+
+        <!-- Formulaire pour ajouter une équipe -->
+
+        <p>
+          <input id="button1" type="button" value="+" onclick="javascript:visibilite('formAddTeam'); return false;" />
+        </p>
+          <div class="col-lg-6">
+            <div id="formAddTeam" class="card" style="display: none;">
+              <div class="card-header">
+                <strong>Ajouter une équipe</strong>
+              </div>
+              <div class="card-body card-block">
+                <form action = "../controller/categories.php" method="post" class="form-horizontal">
+
+                  <div class="col-12 col-md-9"><input type="text" name="nameTeam" placeholder="Nom" class="form-control">
+                  <select class="form-control-lg form-control">
+                    <option value="0">Selectionner la saison</option>
+                    <?php
+                      while ($data = $seasonTeamInsert->fetch())
+                      {
+                    ?>
+                        <option name="saisonTeamAdd" <?php echo 'value="'. $data['identifiantSaison'] .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
+                    <?php
+                      }
+                      $seasonTeamInsert->closeCursor();
+                    ?>
+                  </select>
+
+
+                  <select class="form-control-lg form-control">
+                    <option value="0">Selectionner la catégorie</option>
+                    <?php
+                      while ($data = $categoryTeamInsert->fetch())
+                      {
+                    ?>
+                        <option name="categoryTeamAdd" <?php echo 'value="'. $data['identifiantCategorie'] .'"'; ?> > <?= htmlspecialchars($data['libelleCategorie']) ?> </option>
+                    <?php
+                      }
+                      $categoryTeamInsert->closeCursor();
+                    ?>
+                  </select>
+
+
+                  <select class="form-control-lg form-control">
+                    <option value="0">Selectionner l'entraineur</option>
+                    <?php
+                      while ($data = $coachTeamInsert->fetch())
+                      {
+                    ?>
+                        <option name="coachTeamAdd" <?php echo 'value="'. $data['identifiantEntraineur'] .'"'; ?> > <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur']) ?> </option>
+                    <?php
+                      }
+                      $coachTeamInsert->closeCursor();
+                    ?>
+                  </select>
+
+                  <button type="submit" class="btn btn-primary btn-sm"> Créer l'équipe </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
     </div> <!-- .content -->
   </div><!-- /#right-panel -->
     <!-- Right Panel -->

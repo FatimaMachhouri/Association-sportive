@@ -22,8 +22,21 @@
         $addCategorie = insertCategorie($_POST['libCateg'], $_POST['ageMinCateg'], $_POST['ageMaxCateg']);
       }
 
+      $seasonTeamInsert = getSeasons();
+      $categoryTeamInsert = getCategories();
+      $coachTeamInsert = getCoaches();
+
+
+      if (isset($_POST['nameTeam']) && isset($_POST['saisonTeamAdd']) && isset($_POST['categoryTeamAdd']) && isset($_POST['coachTeamAdd']) ) {
+        $addTeam = insertTeam($_POST['nameTeam'], $_POST['saisonTeamAdd'], $_POST['categoryTeamAdd'], $_POST['coachTeamAdd'] );
+      }
+
+
       $categories = getCategories();
       $teams = getTeams();
+
+
+
       require('../view/categoriesView.php');
 
     }
