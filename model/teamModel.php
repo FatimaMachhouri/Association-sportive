@@ -26,3 +26,19 @@
     $licence->execute(array($idTeam, $idTeam));
     return $licence;
   }//getLicencesToAdd
+
+
+  function updateTeam($idTeam, $newName, $idCoach) {
+    $db = dbConnexion();
+    $team = $db->prepare ( ' UPDATE "AssociationSportive"."Equipe" SET "nomEquipe"= ?, "idEntraineur" = ? WHERE "identifiantEquipe"=?' );
+    $team->execute(array($newName, $idCoach, $idTeam));
+    return $team;
+  } //updateTeam
+
+
+  function deleteTeam($idTeam) {
+    $db = dbConnexion();
+    $team = $db->prepare ( ' DELETE FROM "AssociationSportive"."Equipe" WHERE "identifiantEquipe"= ? ' );
+    $team->execute(array($idTeam));
+    return $team;
+  } //deleteTeam

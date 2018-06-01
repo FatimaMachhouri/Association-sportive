@@ -28,7 +28,7 @@
             if ( strcmp( $data['password'], hash('sha512', $pswd2) ) == 0 && $i !=1)  {
               //on crypte l'identifiant de l'entraineur qu'on récupère dans le cookie
               $data['identifiantEntraineur'] = hash('sha512', $data['identifiantEntraineur']);
-              setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 60*60);
+              setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 60*60*2);
               require('view/homeView.php');
               $i = 1;
               }

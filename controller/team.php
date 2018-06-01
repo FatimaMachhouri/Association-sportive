@@ -10,7 +10,14 @@
   }
 
   else {
+    if ( isset($_GET['idTeamDelete']) ) {
+      $teamDelete = deleteTeam( $_GET['idTeamDelete'] );
+      header('Location: categories.php');
+      exit();
+    }
+    
     if (isset($_GET['idTeam']) && ($_GET['idTeam']) > 0) {
+
       $team = getTeam($_GET['idTeam']);
       $licences = getLicencesTeam($_GET['idTeam']);
 
@@ -18,5 +25,5 @@
 
       require('../view/teamView.php');
     }
-    
+
   }

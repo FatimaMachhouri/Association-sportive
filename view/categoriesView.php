@@ -108,9 +108,6 @@
 
 
       <!-- Formulaire pour ajouter une catégorie avec son nom, age début et age fin -->
-      <p>
-        <input id="button1" type="button" value="+" onclick="javascript:visibilite('formAddCategory'); return false;" />
-      </p>
         <div class="col-lg-6">
           <div id="formAddCategory" class="card" style="display: none;">
             <div class="card-header">
@@ -130,9 +127,6 @@
 
         <!-- Formulaire pour ajouter une équipe -->
 
-        <p>
-          <input id="button1" type="button" value="+" onclick="javascript:visibilite('formAddTeam'); return false;" />
-        </p>
           <div class="col-lg-6">
             <div id="formAddTeam" class="card" style="display: none;">
               <div class="card-header">
@@ -142,13 +136,13 @@
                 <form action = "../controller/categories.php" method="post" class="form-horizontal">
 
                   <div class="col-12 col-md-9"><input type="text" name="nameTeam" placeholder="Nom" class="form-control">
-                  <select class="form-control-lg form-control">
+                  <select name="saisonTeamAdd" class="form-control-lg form-control">
                     <option value="0">Selectionner la saison</option>
                     <?php
                       while ($data = $seasonTeamInsert->fetch())
                       {
                     ?>
-                        <option name="saisonTeamAdd" <?php echo 'value="'. $data['identifiantSaison'] .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
+                        <option <?php echo 'value="'. $data['identifiantSaison'] .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
                     <?php
                       }
                       $seasonTeamInsert->closeCursor();
@@ -156,13 +150,13 @@
                   </select>
 
 
-                  <select class="form-control-lg form-control">
+                  <select name="categoryTeamAdd" class="form-control-lg form-control">
                     <option value="0">Selectionner la catégorie</option>
                     <?php
                       while ($data = $categoryTeamInsert->fetch())
                       {
                     ?>
-                        <option name="categoryTeamAdd" <?php echo 'value="'. $data['identifiantCategorie'] .'"'; ?> > <?= htmlspecialchars($data['libelleCategorie']) ?> </option>
+                        <option <?php echo 'value="'. $data['identifiantCategorie'] .'"'; ?> > <?= htmlspecialchars($data['libelleCategorie']) ?> </option>
                     <?php
                       }
                       $categoryTeamInsert->closeCursor();
@@ -170,13 +164,13 @@
                   </select>
 
 
-                  <select class="form-control-lg form-control">
+                  <select name="coachTeamAdd" class="form-control-lg form-control">
                     <option value="0">Selectionner l'entraineur</option>
                     <?php
                       while ($data = $coachTeamInsert->fetch())
                       {
                     ?>
-                        <option name="coachTeamAdd" <?php echo 'value="'. $data['identifiantEntraineur'] .'"'; ?> > <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur']) ?> </option>
+                        <option <?php echo 'value="'. $data['identifiantEntraineur'] .'"'; ?> > <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur']) ?> </option>
                     <?php
                       }
                       $coachTeamInsert->closeCursor();
@@ -189,6 +183,12 @@
             </div>
           </div>
 
+
+
+          <br clear = left>
+          <button type="button" class="btn btn-success" onclick="javascript:visibilite('formAddCategory'); return false;">Ajouter une catégorie</button>
+          <button type="button" class="btn btn-success" onclick="javascript:visibilite('formAddTeam'); return false;">Ajouter une équipe</button>
+          <br> <br> <br>
 
 
 

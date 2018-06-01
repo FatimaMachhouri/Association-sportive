@@ -41,11 +41,14 @@
 
     <div class="content mt-3">
 
+
       <!-- on affiche les informations de l'équipe -->
       <div id="teamInformation">
         <?php
           while ($data = $team->fetch()) {
         ?>
+            <button> <td><a href="team.php?idTeamDelete=<?php echo htmlspecialchars($data['identifiantEquipe']); ?>"> Supprimer </a></td> </button>
+
             <h1> Nom équipe : <?= htmlspecialchars($data['nomEquipe']) ?> </h1>
             <h1> Catégorie : <?= htmlspecialchars($data['libelleCategorie']) ?> </h1>
             <h1> Entraineur : <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur'])   ?> </h1>
