@@ -23,7 +23,7 @@
 
     <!-- Right Panel -->
 
-  <div id="right-panel" class="right-panel right-panel-equipe">
+  <div id="right-panel" class="right-panel right-panel-team">
 
     <!-- on include le squelette de la page -->
     <?php include("../componentsPage/header.php"); ?>
@@ -47,7 +47,7 @@
         <?php
           while ($data = $team->fetch()) {
         ?>
-            <button> <td><a href="team.php?idTeamDelete=<?php echo htmlspecialchars($data['identifiantEquipe']); ?>"> Supprimer </a></td> </button>
+            <button type="button" class="btn btn-danger"> <a href="team.php?idTeamDelete=<?php echo htmlspecialchars($data['identifiantEquipe']); ?>"> Supprimer </a> </button>
 
             <h1> Nom équipe : <?= htmlspecialchars($data['nomEquipe']) ?> </h1>
             <h1> Catégorie : <?= htmlspecialchars($data['libelleCategorie']) ?> </h1>

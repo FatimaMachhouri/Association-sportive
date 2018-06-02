@@ -3,11 +3,12 @@
 
   require('../model/model.php');
 
+    //on teste si la connexion est valide
     if ( empty($_COOKIE['identifiantCookie']) ) {
-      //on redirige vers le controller qui fera le traitement
       header('Location: ../index.php');
       exit();
     }
+
     else {
       $seasons = getSeasons();
       $teams = getTeams();

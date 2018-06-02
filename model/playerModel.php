@@ -1,48 +1,47 @@
-<?php include("../connexionDB.php"); ?>
-
+<?php include("../dbConnection.php"); ?>
 
 <?php
 
-
   function getPlayer($idPlayer) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $player = $db->prepare ( ' SELECT * FROM "AssociationSportive"."Joueur" WHERE "AssociationSportive"."Joueur"."identifiantJoueur" = ? ');
     $player->execute(array($idPlayer));
     return $player;
-  }//getJoueur
+  }//permet de récupérer les informations d'un joueur avec son identifiant
 
 
   function getLicencesPlayer($idPlayer) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $player = $db->prepare ( ' SELECT * FROM "AssociationSportive"."Joueur", "AssociationSportive"."Licence", "AssociationSportive"."Equipe", "AssociationSportive"."Saison", "AssociationSportive"."Categorie" WHERE "AssociationSportive"."Joueur"."identifiantJoueur" = "AssociationSportive"."Licence"."identifiantJoueur" AND "AssociationSportive"."Licence"."identifiantEquipe" = "AssociationSportive"."Equipe"."identifiantEquipe" AND "AssociationSportive"."Licence"."identifiantSaison" = "AssociationSportive"."Saison"."identifiantSaison" AND "AssociationSportive"."Equipe"."identifiantCategorie" = "AssociationSportive"."Categorie"."identifiantCategorie" AND "AssociationSportive"."Joueur"."identifiantJoueur" = ? ORDER BY "dateDebutSaison" DESC ');
     $player->execute(array($idPlayer));
     return $player;
-  }//getLicencesJoueur
+  }//permet de récupérer les licences d'un joueur dont on passe l'identifiant en paramètre
 
 
-  function updatePlayer($idPlayer, $nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone) {
-    $db = dbConnexion();
+  function updatePlayer($idPlayer, $name, $firstName, $birthday, $gender, $address, $codePostal, $city, $email, $phone) {
+    $db = dbConnection();
     $player = $db->prepare ( ' UPDATE "AssociationSportive"."Joueur" SET "nomJoueur" = ?, "prenomJoueur" = ?, "dateNaissanceJoueur" = ?, "sexeJoueur" = ?, "rueJoueur" = ?, "codePostalJoueur" = ?, "villeJoueur" = ?, "emailJoueur" = ?, "telephoneJoueur" = ? WHERE "identifiantJoueur" = ? ');
-    $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone, $idPlayer));
+    $player->execute(array($name, $firstName, $birthday, $gender, $address, $codePostal, $city, $email, $phone, $idPlayer));
     return $player;
-  }//updatePlayer
+  }//updatePlayer permet de mettre à jour les informations d'un joueur
 
 
   function addLicence($idPlayer, $idSeason, $idTeam) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $player = $db->prepare ( ' INSERT INTO "AssociationSportive"."Licence" ("identifiantJoueur", "identifiantSaison", "identifiantEquipe") VALUES (?,?,?) ');
     $player->execute(array($idPlayer, $idSeason, $idTeam));
     return $player;
-  }
+  }//permet d'ajouter une licence au joueur
+
 
   function getSeasons() {
-    $db = dbConnexion();
+    $db = dbConnection();
     $seasons = $db->query(' SELECT * FROM "AssociationSportive"."Saison" ORDER BY "dateDebutSaison" DESC');
     return $seasons;
-  }//function getSeasons
+  }//on récupère les saisons de la base de données avec date début et fin
 
   function getTeams() {
-      $db = dbConnexion();
+      $db = dbConnection();
       $teams = $db->query(' SELECT * FROM "AssociationSportive"."Equipe" ORDER BY "nomEquipe" ');
       return $teams;
-  }//function getTeams
+  }//on récupère les équipes de la base de données

@@ -7,11 +7,17 @@
 
       <div class="header-left">
 
-        <div class="header-left">
-          <h4> Utilisateur </h4>
-        </div>
 
-      
+        <!-- Si on a quelqu'un qui est connecté, on affiche son nom, prénom dans la barre en haut -->
+        <?php if ( !empty($_COOKIE['identifiantCookie']) ) { ?>
+          <div class="header-left">
+            <h4> Utilisateur : <?php echo $_COOKIE['prenomCookie'] . " " . $_COOKIE['nomCookie']?> </h4>
+          </div>
+
+        <?php
+        }
+        ?>
+
       </div>
 
     </div>

@@ -45,7 +45,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Entraineurs de la saison</h1>
+                        <h1>Entraineurs du club</h1>
                     </div>
                 </div>
             </div>
@@ -69,11 +69,11 @@
                 <form action = "../controller/coaches.php" method="post" class="form-horizontal">
 
                   <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="text" name="firstNameCoach" placeholder="Nom" class="form-control"></div>
+                    <div class="col-12 col-md-9"><input type="text" name="nameCoach" placeholder="Nom" class="form-control"></div>
                   </div>
 
                   <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="text" name="nameCoach" placeholder="Prénom" class="form-control"></div>
+                    <div class="col-12 col-md-9"><input type="text" name="firstnameCoach"nameCoach placeholder="Prénom" class="form-control"></div>
                   </div>
 
                   <div class="row form-group">
@@ -111,15 +111,15 @@
                       <img src="../pictures/playerIcon.png" alt = "Icône coach">
                     </div>
                     <div>
-                      <strong> <?php echo htmlspecialchars($data['nomEntraineur']); ?>
-                      <?php echo htmlspecialchars($data['prenomEntraineur']); ?> </strong>
+                      <strong> <?php echo htmlspecialchars($data['prenomEntraineur']); ?>
+                      <?php echo htmlspecialchars($data['nomEntraineur']); ?> </strong>
                       <div> <?php echo htmlspecialchars($data['emailEntraineur']); ?> </div>
                       <div> <?php echo htmlspecialchars($data['telephoneEntraineur']); ?> </div>
                       <div id="trashIcon"> <a href="coaches.php?idCoach=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a> </div>
 
                       <form action = "coaches.php?idCoachUpdate=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>" method="post">
-                        <div class="col-12 col-md-9"><input type="text" name="firstnameCoachUp" <?php echo 'value="'. $data['nomEntraineur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
-                        <div class="col-12 col-md-9"><input type="text" name="nameCoachUp" <?php echo 'value="'. $data['prenomEntraineur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
+                        <div class="col-12 col-md-9"><input type="text" name="nameCoachUp" <?php echo 'value="'. $data['nomEntraineur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
+                        <div class="col-12 col-md-9"><input type="text" name="firstnameCoachUp" <?php echo 'value="'. $data['prenomEntraineur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
                         <div class="col-12 col-md-9"><input type="email" name="emailCoachUp" <?php echo 'value="'. $data['emailEntraineur'] .'"'; ?> placeholder="email" class="form-control"> </div>
                         <div class="col-12 col-md-9"><input type="number" name="telCoachUp" <?php echo 'value="'. $data['telephoneEntraineur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
                         <button type="submit"> Modifier </button>

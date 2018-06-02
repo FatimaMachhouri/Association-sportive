@@ -1,27 +1,25 @@
-<?php include("../connexionDB.php"); ?>
+<?php include("../dbConnection.php"); ?>
 
 <?php
 
-
-
   function getLicencesCurrentSeason() {
-    $db = dbConnexion();
+    $db = dbConnection();
     $licencesSeason = $db->query(' SELECT * FROM "AssociationSportive"."Saison", "AssociationSportive"."Licence", "AssociationSportive"."Joueur", "AssociationSportive"."Equipe", "AssociationSportive"."Categorie" WHERE now() >= "dateDebutSaison" AND now() <= "dateFinSaison" AND "AssociationSportive"."Licence"."identifiantJoueur" = "AssociationSportive"."Joueur"."identifiantJoueur" AND "AssociationSportive"."Saison"."identifiantSaison" = "AssociationSportive"."Licence"."identifiantSaison" AND "AssociationSportive"."Equipe"."identifiantCategorie" = "AssociationSportive"."Categorie"."identifiantCategorie" AND "AssociationSportive"."Licence"."identifiantEquipe" = "AssociationSportive"."Equipe"."identifiantEquipe" ORDER BY "ageMinCategorie", "nomJoueur" ');
     return $licencesSeason;
-  }//getLicencesCurrentSeason
+  }//getLicencesCurrentSeason permet de récuperer les licences de la saion en cours
 
 
-  function insertPlayer($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone) {
-    $db = dbConnexion();
+  function insertPlayer($name, $firstname, $birthday, $gender, $address, $codePostal, $city, $email, $phone) {
+    $db = dbConnection();
     $player = $db->prepare ( ' INSERT INTO "AssociationSportive"."Joueur" ("nomJoueur", "prenomJoueur", "dateNaissanceJoueur", "sexeJoueur", "rueJoueur", "codePostalJoueur", "villeJoueur", "emailJoueur", "telephoneJoueur") VALUES(?,?,?,?,?,?,?,?,?) ');
-    $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone));
+    $player->execute(array($name, $firstname, $birthday, $gender, $address, $codePostal, $city, $email, $phone));
     return $player;
-  }//insertPlayer
+  }//insertPlayer permet d'ajouter un joueur en remplissant le champ adresse
 
 
-  function insertPlayerWithoutAddr($nom, $prenom, $dateNaissance, $sexe, $email, $telephone) {
-    $db = dbConnexion();
+  function insertPlayerWithoutAddr($name, $firstname, $birthday, $gender, $email, $phone) {
+    $db = dbConnection();
     $player = $db->prepare ( ' INSERT INTO "AssociationSportive"."Joueur" ("nomJoueur", "prenomJoueur", "dateNaissanceJoueur", "sexeJoueur", "emailJoueur", "telephoneJoueur") VALUES(?,?,?,?,?,?) ');
-    $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $email, $telephone));
+    $player->execute(array($name, $firstname, $birthday, $gender, $email, $phone));
     return $player;
-  }//insertPlayerWithoutAddr
+  }//insertPlayerWithoutAddr permet d'ajouter un joueur en laissant le champ adresse vide car il peut être nul

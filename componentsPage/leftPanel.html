@@ -1,4 +1,4 @@
-<!-- Barre latérale commune à toutes les pages contenant les liens vers les autres pages -->
+<!-- Barre latérale commune à toutes les pages contenant le menu vers les autres pages -->
   <aside id="left-panel" class="left-panel">
 
     <nav class="navbar navbar-expand-sm navbar-default">
@@ -7,15 +7,22 @@
         <a class="navbar-brand"><img src="../pictures/logo.png" alt="Logo ballon vert"></a>
       </div>
 
+      <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+          </button>
+      </div>
+
       <div id="main-menu" class="main-menu collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <h3 class="menu-title"> Compte </h3>
-          <li class="active">
-            <a href="../index.php?idDelete=1> <i class="menu-icon fa ti-close"></i> Deconnexion </a>
+          <li>
+            <a href="../index.php?deconnexion='logout'"> <i class="menu-icon fa fa-times"></i> Deconnexion </a>
           </li>
+
           <h3 class="menu-title"> Saison actuelle </h3>
           <li>
-            <a href="../controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i> Equipes </a>
+            <a href="../controller/categories.php"> <i class="menu-icon fa fa-dribbble"></i> Équipes </a>
           </li>
           <li>
             <a href="../controller/players.php"> <i class="menu-icon fa fa-file-text"></i> Licenciés </a>
@@ -24,21 +31,17 @@
             <a href="../controller/coaches.php"> <i class="menu-icon fa fa-user"></i> Entraineurs </a>
           </li>
 
-          <h3 class="menu-title"> Saisons antérieures </h3>
-          <li>
-            <a href=""> <i class="menu-icon fa fa-th"></i> Saisons </a>
-          </li>
+          <h3 class="menu-title"> Saisons </h3>
           <li>
             <a href="../controller/listPlayers.php"> <i class="menu-icon fa fa-users"></i> Joueurs </a>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div>
 
 
     </nav>
 
-  </aside><!-- /#left-panel -->
-
+  </aside>
 
 
 

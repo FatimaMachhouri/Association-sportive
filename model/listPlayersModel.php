@@ -1,36 +1,25 @@
-<?php include("../connexionDB.php"); ?>
+<?php include("../dbConnection.php"); ?>
 
 <?php
 
-
   function getAllPlayers() {
-    $db = dbConnexion();
+    $db = dbConnection();
     $players = $db->query(' SELECT * FROM "AssociationSportive"."Joueur" ORDER BY "nomJoueur" ');
     return $players;
-  }//getAllPlayers
+  }//getAllPlayers permet de récuperer les informations de tous les joueurs
 
 
-  function insertPlayer($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone) {
-    $db = dbConnexion();
+  function insertPlayer($name, $firstname, $birthday, $gender, $address, $codePostal, $city, $email, $phone) {
+    $db = dbConnection();
     $player = $db->prepare ( ' INSERT INTO "AssociationSportive"."Joueur" ("nomJoueur", "prenomJoueur", "dateNaissanceJoueur", "sexeJoueur", "rueJoueur", "codePostalJoueur", "villeJoueur", "emailJoueur", "telephoneJoueur") VALUES(?,?,?,?,?,?,?,?,?) ');
-    $player->execute(array($nom, $prenom, $dateNaissance, $sexe, $rue, $codePostal, $ville, $email, $telephone));
+    $player->execute(array($name, $firstname, $birthday, $gender, $address, $codePostal, $city, $email, $phone));
     return $player;
-  }//insertPlayer
+  }//insertPlayer permet d'ajouter un joueur à la base de données
 
 
   function deletePlayer($idPlayer) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $player = $db->prepare ( ' DELETE FROM "AssociationSportive"."Joueur" WHERE "identifiantJoueur" = ? ');
     $player->execute(array($idPlayer));
     return $player;
-  }//deletePlayer
-
-
-
-
-  function deletePlayerInd($idPlayer) {
-    $db = dbConnexion();
-    $player = $db->prepare ( ' DELETE FROM "AssociationSportive"."Joueur" WHERE "identifiantJoueur" = ? ');
-    $player->execute(array($idPlayer));
-    return $player;
-  }//deletePlayer
+  }//pour supprimer un joueur

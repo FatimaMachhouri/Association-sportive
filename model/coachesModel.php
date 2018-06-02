@@ -1,63 +1,57 @@
-<?php include("../connexionDB.php"); ?>
-
+<?php include("../dbConnection.php"); ?>
 
 <?php
 
-
   function getCoaches() {
-    $db = dbConnexion();
+    $db = dbConnection();
     $coaches = $db->query(' SELECT * FROM "AssociationSportive"."Entraineur" ORDER BY "nomEntraineur" ');
     return $coaches;
-  }//function getCoaches
+  }//getCoaches permet de récupérer tous les entraineurs
 
 
   function insertCoach($firstname, $name, $email, $telephone) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $coach = $db->prepare ( ' INSERT INTO "AssociationSportive"."Entraineur" ("nomEntraineur", "prenomEntraineur", "emailEntraineur", "telephoneEntraineur") VALUES(?,?,?,?)');
     $coach->execute(array($firstname, $name, $email, $telephone));
     return $coach;
-  }//insertCoach
+  }//insertCoach permet d'ajouter un entraineur
 
 
   function deleteCoach($idCoach) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $coach = $db->prepare ( ' DELETE FROM "AssociationSportive"."Entraineur" WHERE "identifiantEntraineur" = ? ');
     $coach->execute(array($idCoach));
     return $coach;
-  }//deleteCoach
+  }//deleteCoach permet de supprimer un entraineur
 
 
-  function updateCoach($idCoach, $nomCoach, $prenomCoach, $emailCoach, $telephoneCoach) {
-    $db = dbConnexion();
-    $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "nomEntraineur" = ?, "prenomEntraineur" = ?, "emailEntraineur" = ?, "telephoneEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
-    $coach->execute(array($nomCoach, $prenomCoach, $emailCoach, $telephoneCoach, $idCoach));
-    return $coach;
-  }//updateCoach
-
-  function updateCoachFirstname($idCoach, $nomCoach) {
-    $db = dbConnexion();
-    $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "nomEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
-    $coach->execute(array($nomCoach, $idCoach));
-    return $coach;
-  }//updateCoach
-
-  function updateCoachName($idCoach, $prenomCoach) {
-    $db = dbConnexion();
+  function updateCoachFirstname($idCoach, $firstname) {
+    $db = dbConnection();
     $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "prenomEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
-    $coach->execute(array($prenomCoach, $idCoach));
+    $coach->execute(array($firstname, $idCoach));
     return $coach;
-  }//updateCoach
+  }//permet de modifier les informations d'un entraineur
+
+
+  function updateCoachName($idCoach, $name) {
+    $db = dbConnection();
+    $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "nomEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
+    $coach->execute(array($name, $idCoach));
+    return $coach;
+  }//permet de modifier les informations d'un entraineur
+
 
   function updateCoachMail($idCoach, $email) {
-    $db = dbConnexion();
+    $db = dbConnection();
     $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "emailEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
     $coach->execute(array($email, $idCoach));
     return $coach;
-  }//updateCoach
+  }//permet de modifier les informations d'un entraineur
 
-  function updateCoachPhone($idCoach, $tel) {
-    $db = dbConnexion();
+
+  function updateCoachPhone($idCoach, $phone) {
+    $db = dbConnection();
     $coach = $db->prepare (' UPDATE "AssociationSportive"."Entraineur" SET "telephoneEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
-    $coach->execute(array($tel, $idCoach));
+    $coach->execute(array($phone, $idCoach));
     return $coach;
-  }//updateCoach
+  }//permet de modifier les informations d'un entraineur

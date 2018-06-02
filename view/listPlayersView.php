@@ -92,10 +92,10 @@
                     <div class="col col-md-9">
                       <div class="form-check-inline form-check">
                         <label class="form-check-label ">
-                          <input type="radio" name="gender" value="F" class="form-check-input"> Féminin
+                          <input type="radio" name="gender" value="Féminin" class="form-check-input"> Féminin
                         </label>
                         <label class="form-check-label ">
-                          <input type="radio" name="gender" value="M" class="form-check-input"> Masculin
+                          <input type="radio" name="gender" value="Masculin" class="form-check-input"> Masculin
                         </label>
                       </div>
                     </div>

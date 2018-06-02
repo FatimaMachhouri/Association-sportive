@@ -1,15 +1,17 @@
 
 <?php
 
-  require('../model/categoryModel.php');
+  require('../model/categoriesModel.php');
 
+    //on teste si la connexion est valide
     if ( empty($_COOKIE['identifiantCookie']) ) {
-      //on redirige vers le controller qui fera le traitement
+      //on redirige vers le controller qui fera le traitement à savoir il affichera la page de connexion
       header('Location: ../index.php');
       exit();
     }
 
     else {
+
       if ( isset($_GET['idCategory']) ) {
         $deleteCategory = deleteCategory($_GET['idCategory']);
       }
@@ -26,16 +28,12 @@
       $categoryTeamInsert = getCategories();
       $coachTeamInsert = getCoaches();
 
-
       if (isset($_POST['nameTeam']) && isset($_POST['saisonTeamAdd']) && isset($_POST['categoryTeamAdd']) && isset($_POST['coachTeamAdd']) ) {
         $addTeam = insertTeam($_POST['nameTeam'], $_POST['saisonTeamAdd'], $_POST['categoryTeamAdd'], $_POST['coachTeamAdd'] );
       }
 
-
       $categories = getCategories();
       $teams = getTeams();
-
-
 
       require('../view/categoriesView.php');
 

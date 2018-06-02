@@ -56,6 +56,9 @@
         while ($dataPlayer = $player->fetch())
         {
       ?>
+        <div id="buttonPlayer">
+          <button type="button" class="btn btn-danger"> <a href="listPlayers.php?idPlayerDeleteInd=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>"> Supprimer le joueur </a> </button>
+        </div>
         <div id="playerInformation">
           <p> Nom : <strong> <?php echo htmlspecialchars($dataPlayer['nomJoueur']); ?> </strong> </p>
           <p> Prénom : <strong> <?php echo htmlspecialchars($dataPlayer['prenomJoueur']); ?> </strong> </p>
@@ -68,23 +71,38 @@
         <br clear=left>
 
         <?php $identPlayer ?>
-        <!-- Formulaire de modification des données du joueur -->
-        <form class = "form-group" action = "player.php?idPlayer=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>" method="post">
-          <div class="col-12 col-md-9"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. $dataPlayer['nomJoueur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="text" name="namePlayerUp" <?php echo 'value="'. $dataPlayer['prenomJoueur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="text" name="genderPlayerUp" <?php echo 'value="'. $dataPlayer['sexeJoueur'] .'"'; ?> placeholder="Sexe" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="text" name="addressPlayerUp" <?php echo 'value="'. $dataPlayer['rueJoueur'] .'"'; ?> placeholder="Rue" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="number" name="codePostalJoueurUp" <?php echo 'value="'. $dataPlayer['codePostalJoueur'] .'"'; ?> placeholder="Code postal" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="text" name="cityPlayerUp" <?php echo 'value="'. $dataPlayer['villeJoueur'] .'"'; ?> placeholder="Ville" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="email" name="emailPlayerUp" <?php echo 'value="'. $dataPlayer['emailJoueur'] .'"'; ?> placeholder="email" class="form-control"> </div>
-          <div class="col-12 col-md-9"><input type="number" name="numberPlayerUp" <?php echo 'value="'. $dataPlayer['telephoneJoueur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
-          <?php $identPlayer = $dataPlayer['identifiantJoueur']; ?>
-          <button type="submit"> Modifier </button>
-        </form>
 
-        <br clear=left>
-        <button> <td><a href="listPlayers.php?idPlayerDeleteInd=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>"> Supprimer le joueur </a></td> </button>
+
+
+        <p>
+          <input type="button" class="btn btn-info" value="Modifier les informations" onclick="javascript:visibilite('formUpPlayer'); return false;" />
+        </p>
+
+        <!-- Formulaire de modification des données du joueur -->
+        <form id="formUpPlayer" class = "form-group" action = "player.php?idPlayer=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>" method="post" style="display: none;">
+          <div class="form-row">
+            <div class="col"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. $dataPlayer['nomJoueur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
+            <div class="col"><input type="text" name="namePlayerUp" <?php echo 'value="'. $dataPlayer['prenomJoueur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
+          </div>
+          <br>
+          <div class="form-group"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance" class="form-control"> </div>
+          <div class="form-group"><input type="text" name="genderPlayerUp" <?php echo 'value="'. $dataPlayer['sexeJoueur'] .'"'; ?> placeholder="Sexe" class="form-control"> </div>
+
+          <div class="form-row">
+            <div class="col"><input type="text" name="addressPlayerUp" <?php echo 'value="'. $dataPlayer['rueJoueur'] .'"'; ?> placeholder="Rue" class="form-control"> </div>
+            <div class="col"><input type="number" name="codePostalJoueurUp" <?php echo 'value="'. $dataPlayer['codePostalJoueur'] .'"'; ?> placeholder="Code postal" class="form-control"> </div>
+            <div class="col"><input type="text" name="cityPlayerUp" <?php echo 'value="'. $dataPlayer['villeJoueur'] .'"'; ?> placeholder="Ville" class="form-control"> </div>
+          </div>
+
+          <br>
+          <div class="form-row">
+            <div class="col"><input type="email" name="emailPlayerUp" <?php echo 'value="'. $dataPlayer['emailJoueur'] .'"'; ?> placeholder="email" class="form-control"> </div>
+            <div class="col"><input type="number" name="numberPlayerUp" <?php echo 'value="'. $dataPlayer['telephoneJoueur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
+          </div>
+          <?php $identPlayer = $dataPlayer['identifiantJoueur']; ?>
+          <br>
+          <button id="buttonUpPlayer" type="submit" class="btn btn-primary"> Modifier </button>
+        </form>
 
 
       <?php
@@ -94,7 +112,7 @@
 
 
 
-
+      <br clear = left>
       <!-- Liste de toutes les licences du joueur -->
       </br>
       <h2> Licences du joueur </h2>
@@ -130,6 +148,7 @@
 
       <br clear = left>
       <button type="button" class="btn btn-success" onclick="javascript:visibilite('formAddLicence'); return false;">Ajouter une licence</button>
+
 
       <div class="col-lg-6">
         <div id="formAddLicence" class="card" style="display: none;">

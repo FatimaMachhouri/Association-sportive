@@ -59,7 +59,6 @@ a:hover, a:focus, a:active {
   text-align : center;
 }
 
-
 #titleTeamView2 {
   font-family: cursive;
   margin-left: 85px
@@ -68,7 +67,6 @@ a:hover, a:focus, a:active {
 .teamTable {
   margin : auto;
 }
-
 
 .boxPlayer {
  width:175px;
@@ -89,7 +87,6 @@ hr {
   border: none;
   border-bottom: 3px solid #0000CD;
 }
-
 
 #titlePlayersView {
   font-family: cursive;
@@ -112,7 +109,6 @@ hr {
     font-size: 20px;
 }
 
-
 .table-dark a:hover, a:focus, a:active {
   color: green;
   font-size: 20px;
@@ -129,4 +125,24 @@ hr {
 
 .right-panel-listPlayers {
   background-image: url("pictures/backgroundListPlayers.png");
+}
+
+.right-panel-team {
+  background-image: url("pictures/backgroundTeam.png");
+}
+
+#buttonPlayer {
+  font-family: cursive;
+  text-align : center;
+}
+
+
+.form-group {
+  width : 500px;
+}
+
+#buttonUpPlayer {
+  width : 500px;
+  background-color : orange;
+  border-color : orange;
 }

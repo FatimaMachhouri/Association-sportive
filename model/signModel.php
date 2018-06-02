@@ -1,19 +1,18 @@
-<?php include("connexionDB.php"); ?>
+<?php include("dbConnection.php"); ?>
 
 <?php
 
-
-  function inscription($firstname, $name, $email, $telephone, $password) {
-    $db = dbConnexion();
+  function inscription($name, $firstname, $email, $phone, $password) {
+    $db = dbConnection();
     $coach = $db->prepare ( ' INSERT INTO "AssociationSportive"."Entraineur" ("nomEntraineur", "prenomEntraineur", "emailEntraineur", "telephoneEntraineur", "password") VALUES(?,?,?,?,?)');
-    $coach->execute(array($firstname, $name, $email, $telephone, $password));
+    $coach->execute(array($name, $firstname, $email, $phone, $password));
     return $coach;
-  }//insertCoach
+  }//insertCoach permet de s'inscrire lorsqu'on est sur la page de connexion
 
 
-  function testPassword($email) {
-    $db = dbConnexion();
+  function password($email) {
+    $db = dbConnection();
     $coach = $db->prepare ( ' SELECT * FROM "AssociationSportive"."Entraineur" WHERE "emailEntraineur" = ? ');
     $coach->execute(array($email));
     return $coach;
-  }//testPassword
+  }//password recupère le mot de passe (crypté) correspondant à l'email passé en paramètre
