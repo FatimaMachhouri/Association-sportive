@@ -82,11 +82,11 @@
           <form action = "index.php" method="post" class="form-horizontal">
             <div class="form-group">
               <label>Nom</label>
-              <input type="text" name="firstNameCoachInscri" placeholder="Nom" class="form-control">
+              <input type="text" name="nameCoachInscr" placeholder="Nom" class="form-control">
             </div>
             <div class="form-group">
               <label>Prénom</label>
-              <input type="text" name="nameCoachInscr" placeholder="Prénom" class="form-control">
+              <input type="text" name="firstNameCoachInscri" placeholder="Prénom" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>

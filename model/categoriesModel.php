@@ -57,6 +57,6 @@
 
   function getCoaches() {
     $db = dbConnection();
-    $coaches = $db->query(' SELECT * FROM "AssociationSportive"."Entraineur" ORDER BY "nomEntraineur" ');
+    $coaches = $db->query(' SELECT * FROM "AssociationSportive"."Entraineur" WHERE "role" is not null ORDER BY "nomEntraineur" ');
     return $coaches;
-  }//on récupère les entraineurs de la base de données 
+  }//on récupère les entraineurs de la base de données

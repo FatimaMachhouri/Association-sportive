@@ -89,8 +89,10 @@
 
 
                 <form action = "categories.php?idCategoryUpdate=<?php echo htmlspecialchars($datasCategories['identifiantCategorie']); ?>" method="post" class="form-horizontal">
-                  <div class="col-12 col-md-9"><input type="text" name="valueName" placeholder="Libellé" class="form-control"> </div>
-                  <button type="submit"> Modifier </button>
+                  <div class="form-row">
+                    <div class="col"> <input type="text" name="valueName" placeholder="Libellé" class="form-control form-control-sm"> </div>
+                    <div class="col"> <button type="submit" class="btn btn-primary btn-sm"> Modifier </button> </div>
+                  </div>
                 </form>
 
 

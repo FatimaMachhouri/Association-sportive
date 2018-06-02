@@ -22,8 +22,8 @@
 
     else {
       //s'il a rempli le formulaire d'inscription, on ajoute ses informations à la base de données en cryptant le mdp
-      if ( isset($_POST['firstNameCoachInscri']) && isset($_POST['nameCoachInscr']) && isset($_POST['emailCoachInscr']) && isset($_POST['phoneNumberCoachInscr']) && isset($_POST['passwordInscr']) ) {
-        $addCoach = inscription( $_POST['firstNameCoachInscri'], $_POST['nameCoachInscr'], $_POST['emailCoachInscr'], $_POST['phoneNumberCoachInscr'], hash('sha512', $_POST['passwordInscr']) );
+      if ( isset($_POST['nameCoachInscr']) && isset($_POST['firstNameCoachInscri']) && isset($_POST['emailCoachInscr']) && isset($_POST['phoneNumberCoachInscr']) && isset($_POST['passwordInscr']) ) {
+        $addCoach = inscription( $_POST['nameCoachInscr'], $_POST['firstNameCoachInscri'], $_POST['emailCoachInscr'], $_POST['phoneNumberCoachInscr'], hash('sha512', $_POST['passwordInscr']) );
       }
 
       //s'il tente de se connecter
@@ -35,14 +35,18 @@
         while ($data = $password->fetch())
         {
 
-          //on n'oublie pas de crypter le mot de passe entré pour pouvoir le comparer avec celui stocké
-          if ( strcmp( $data['password'], hash('sha512', $enteredPassword) ) == 0 )  {
-            setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 2*60*60);
-            setcookie('nomCookie', $data['nomEntraineur'], time() + 2*60*60);
-            setcookie('prenomCookie', $data['prenomEntraineur'], time() + 2*60*60);
-            header('Location: controller/categories.php');
+          if ( isset($data['role']) ) {
 
-          } //if
+            //on n'oublie pas de crypter le mot de passe entré pour pouvoir le comparer avec celui stocké
+            if ( strcmp( $data['password'], hash('sha512', $enteredPassword) ) == 0 )  {
+              setcookie('identifiantCookie', $data['identifiantEntraineur'], time() + 2*60*60);
+              setcookie('nomCookie', $data['nomEntraineur'], time() + 2*60*60);
+              setcookie('prenomCookie', $data['prenomEntraineur'], time() + 2*60*60);
+              setcookie('roleCookie', $data['role'], time() + 2*60*60);
+              header('Location: controller/categories.php');
+            } //if
+
+          }
 
         } //while
         $password->closeCursor();

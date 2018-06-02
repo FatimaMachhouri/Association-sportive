@@ -54,44 +54,47 @@
         <div class="content mt-3">
 
           <!-- Form add coach -->
-          <p>
-            <input type="button" class="btn btn-outline-primary" value="Ajouter un entraineur" onclick="javascript:visibilite('formAddCoach'); return false;" />
-          </p>
+          <?php if( strcmp($_COOKIE['roleCookie'], 'administrateur')==0 ) { ?>
 
-          <div class="col-lg-6">
-            <div id="formAddCoach" class="card" style="display: none;">
+            <p>
+              <input type="button" class="btn btn-outline-primary" value="Ajouter un entraineur" onclick="javascript:visibilite('formAddCoach'); return false;" />
+            </p>
 
-              <div class="card-header">
-                <strong>Ajouter un entraineur</strong>
+            <div class="col-lg-6">
+              <div id="formAddCoach" class="card" style="display: none;">
+
+                <div class="card-header">
+                  <strong>Ajouter un entraineur</strong>
+                </div>
+
+                <div class="card-body card-block">
+                  <form action = "../controller/coaches.php" method="post" class="form-horizontal">
+
+                    <div class="row form-group">
+                      <div class="col-12 col-md-9"><input type="text" name="nameCoach" placeholder="Nom" class="form-control"></div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-12 col-md-9"><input type="text" name="firstnameCoach" nameCoach placeholder="Prénom" class="form-control"></div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-12 col-md-9"><input type="email" name="emailCoach" placeholder="Adresse mail" class="form-control"></div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-12 col-md-9"><input type="number" name="phoneNumberCoach" placeholder="Numéro de téléphone" class="form-control"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-sm"> Ajouter </button>
+
+                  </form>
+                </div>
+
               </div>
-
-              <div class="card-body card-block">
-                <form action = "../controller/coaches.php" method="post" class="form-horizontal">
-
-                  <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="text" name="nameCoach" placeholder="Nom" class="form-control"></div>
-                  </div>
-
-                  <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="text" name="firstnameCoach"nameCoach placeholder="Prénom" class="form-control"></div>
-                  </div>
-
-                  <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="email" name="emailCoach" placeholder="Adresse mail" class="form-control"></div>
-                  </div>
-
-                  <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="number" name="phoneNumberCoach" placeholder="Numéro de téléphone" class="form-control"></div>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary btn-sm"> Ajouter </button>
-
-                </form>
-              </div>
-
             </div>
-          </div>
-          <!-- Form add coach -->
+          <?php } ?>
+            <!-- Form add coach -->
 
 
           <br clear=left>
@@ -106,8 +109,8 @@
 
               <div class="col-sm-6 col-lg-3">
                 <div class="card-body pb-0">
-                  <div class="boxPlayer">
-                    <div class="boxPlayerInside">
+                  <div class="boxCoach">
+                    <div class="boxCoachInside">
                       <img src="../pictures/playerIcon.png" alt = "Icône coach">
                     </div>
                     <div>
@@ -115,15 +118,19 @@
                       <?php echo htmlspecialchars($data['nomEntraineur']); ?> </strong>
                       <div> <?php echo htmlspecialchars($data['emailEntraineur']); ?> </div>
                       <div> <?php echo htmlspecialchars($data['telephoneEntraineur']); ?> </div>
-                      <div id="trashIcon"> <a href="coaches.php?idCoach=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a> </div>
 
-                      <form action = "coaches.php?idCoachUpdate=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>" method="post">
-                        <div class="col-12 col-md-9"><input type="text" name="nameCoachUp" <?php echo 'value="'. $data['nomEntraineur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
-                        <div class="col-12 col-md-9"><input type="text" name="firstnameCoachUp" <?php echo 'value="'. $data['prenomEntraineur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
-                        <div class="col-12 col-md-9"><input type="email" name="emailCoachUp" <?php echo 'value="'. $data['emailEntraineur'] .'"'; ?> placeholder="email" class="form-control"> </div>
-                        <div class="col-12 col-md-9"><input type="number" name="telCoachUp" <?php echo 'value="'. $data['telephoneEntraineur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
-                        <button type="submit"> Modifier </button>
-                      </form>
+              
+                      <button>
+                        <a id="linkPlayer" href="coaches.php?idCoachUpdate=<?php echo htmlspecialchars($data['identifiantEntraineur']) ; ?>">
+                          Administrateur
+                        </a>
+                      </button>
+
+                      <?php if( strcmp($_COOKIE['roleCookie'], 'administrateur')==0 ) { ?>
+                        <a id="trashIconCoach" href="coaches.php?idCoach=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a>
+
+
+                      <?php } ?>
 
 
                     </div>

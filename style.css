@@ -146,3 +146,25 @@ hr {
   background-color : orange;
   border-color : orange;
 }
+
+
+.boxCoach {
+ width:175px;
+ height:260px;
+ background:white;
+ text-align : center;
+ font-family: cursive;
+}
+
+.boxCoachInside {
+ width:145px;
+ height:145px;
+ margin:auto;
+ overflow:hidden;
+}
+
+#trashIconCoach {
+  position:relative;
+  bottom:0;
+  right:0;
+}

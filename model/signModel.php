@@ -15,4 +15,4 @@
     $coach = $db->prepare ( ' SELECT * FROM "AssociationSportive"."Entraineur" WHERE "emailEntraineur" = ? ');
     $coach->execute(array($email));
     return $coach;
-  }//password recupère le mot de passe (crypté) correspondant à l'email passé en paramètre
+  }//password recupère le tuple correspondant à l'email passé en paramètre
