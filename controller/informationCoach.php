@@ -15,7 +15,7 @@
     if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['password']) ) {
       $updateInformation = updateCoach( $_COOKIE['identifiantCookie'], $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone'], hash('sha512', $_POST['password']) );
     }
-    
+
     $coach = getCoach($_COOKIE['identifiantCookie']);
 
     while($data = $coach->fetch()) {
@@ -23,6 +23,7 @@
       $firstname = $data['prenomEntraineur'];
       $email = $data['emailEntraineur'];
       $phone = $data['telephoneEntraineur'];
+      $password = $data['password'];
     }
     $coach->closeCursor();
 

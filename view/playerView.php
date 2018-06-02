@@ -85,7 +85,7 @@
             <div class="col"><input type="text" name="namePlayerUp" <?php echo 'value="'. $dataPlayer['prenomJoueur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
           </div>
           <br>
-          <div class="form-group"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance" class="form-control"> </div>
+          <div class="form-group"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance AAAA-MM-JJ" class="form-control"> </div>
           <div class="form-group"><input type="text" name="genderPlayerUp" <?php echo 'value="'. $dataPlayer['sexeJoueur'] .'"'; ?> placeholder="Sexe" class="form-control"> </div>
 
           <div class="form-row">

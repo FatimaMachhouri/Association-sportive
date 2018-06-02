@@ -102,7 +102,7 @@
                   </div>
 
                   <div class="row form-group">
-                    <div class="col-12 col-md-9"><input type="date" name="birthday" placeholder="Date de naissance" class="form-control"></div>
+                    <div class="col-12 col-md-9"><input type="date" name="birthday" placeholder="Date de naissance AAAA-MM-JJ" class="form-control"></div>
                   </div>
 
                   <div class="row form-group">
