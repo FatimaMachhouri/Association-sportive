@@ -2,10 +2,10 @@
 
 
 <?php
-  function updateCoach($idCoach, $name, $firstName, $email, $phone, $password) {
+  function updateCoach($idCoach, $name, $firstName, $email, $phone) {
     $db = dbConnection();
-    $coach = $db->prepare ( ' UPDATE "AssociationSportive"."Entraineur" SET "nomEntraineur" = ?, "prenomEntraineur" = ?, "emailEntraineur" = ?, "telephoneEntraineur" = ?, "password" = ? WHERE "identifiantEntraineur" = ? ');
-    $coach->execute(array($name, $firstName, $email, $phone, $password, $idCoach));
+    $coach = $db->prepare ( ' UPDATE "AssociationSportive"."Entraineur" SET "nomEntraineur" = ?, "prenomEntraineur" = ?, "emailEntraineur" = ?, "telephoneEntraineur" = ? WHERE "identifiantEntraineur" = ? ');
+    $coach->execute(array($name, $firstName, $email, $phone, $idCoach));
     return $coach;
   }//updatePlayer permet de mettre à jour les informations d'un coach
 

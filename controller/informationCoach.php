@@ -12,8 +12,8 @@
 
   else {
 
-    if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['password']) ) {
-      $updateInformation = updateCoach( $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone'], hash('sha512', $_POST['password']), $_COOKIE['identifiantCookie']);
+    if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) ) {
+      $updateInformation = updateCoach( $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone'], $_COOKIE['identifiantCookie']);
     }
 
     $coach = getCoach($_COOKIE['identifiantCookie']);
