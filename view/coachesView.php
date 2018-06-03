@@ -119,16 +119,16 @@
                       <div> <?php echo htmlspecialchars($data['emailEntraineur']); ?> </div>
                       <div> <?php echo htmlspecialchars($data['telephoneEntraineur']); ?> </div>
 
-              
-                      <button>
-                        <a id="linkPlayer" href="coaches.php?idCoachUpdate=<?php echo htmlspecialchars($data['identifiantEntraineur']) ; ?>">
-                          Administrateur
-                        </a>
-                      </button>
 
                       <?php if( strcmp($_COOKIE['roleCookie'], 'administrateur')==0 ) { ?>
-                        <a id="trashIconCoach" href="coaches.php?idCoach=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a>
 
+                        <button>
+                          <a id="linkPlayer" href="coaches.php?idCoachUpdate=<?php echo htmlspecialchars($data['identifiantEntraineur']) ; ?>">
+                            Administrateur
+                          </a>
+                        </button>
+
+                        <a id="trashIconCoach" href="coaches.php?idCoach=<?php echo htmlspecialchars($data['identifiantEntraineur']); ?>"><img src="../pictures/trashIcon.png" alt="Icône corbeille"/></a>
 
                       <?php } ?>
 
