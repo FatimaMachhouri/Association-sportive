@@ -12,7 +12,7 @@
 
   else {
 
-    if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['psswd'])) {
+    if ( isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) ) {
       $updateInformation = updateCoach($_COOKIE['identifiantCookie'], $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone']);
     }
 
