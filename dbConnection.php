@@ -10,7 +10,7 @@ function dbConnection() {
     $user = getenv("User");
     $password = getenv("Password");
 
-    $db = new PDO('pgsql:host=$host; dbname=$database; $user; $password');
+    $db = new PDO('pgsql:host=$host; dbname=$database; $user, $password');
 
 
 
