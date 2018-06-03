@@ -21,13 +21,9 @@
     }
 
     else {
-      //s'il a rempli le formulaire d'inscription, on ajoute ses informations à la base de données en cryptant le mdp
-      if ( isset($_POST['nameCoachInscr']) && isset($_POST['firstNameCoachInscri']) && isset($_POST['emailCoachInscr']) && isset($_POST['phoneNumberCoachInscr']) && isset($_POST['passwordInscr']) ) {
-        $addCoach = inscription( $_POST['nameCoachInscr'], $_POST['firstNameCoachInscri'], $_POST['emailCoachInscr'], $_POST['phoneNumberCoachInscr'] );
-      }
 
       //s'il tente de se connecter
-      elseif ( isset($_POST['emailConnexion']) && isset($_POST['passwordConnexion']) ) {
+      if ( isset($_POST['emailConnexion']) && isset($_POST['passwordConnexion']) ) {
         //on récupère dans la base de donnée le mdp correspondant à cet email (s'il existe)
         $password = password($_POST['emailConnexion']);
         $enteredPassword = $_POST['passwordConnexion'];
@@ -35,6 +31,7 @@
         while ($data = $password->fetch())
         {
 
+          //s'il son champ role n'est pas vide, on rentre dans le if
           if ( isset($data['role']) ) {
 
             //on n'oublie pas de crypter le mot de passe entré pour pouvoir le comparer avec celui stocké

@@ -7,20 +7,6 @@
     <title>Authentification</title>
 
 
-    <!-- fonction qui permet de faire apparait et disparait au clic -->
-    <script type="text/javascript">
-      function visibilite(id) {
-        var targetElement;
-        targetElement = document.getElementById(id) ;
-        if (targetElement.style.display == "") {
-          targetElement.style.display = "none" ;
-          }
-          else {
-          targetElement.style.display = "" ;
-          }    
-      }   
-    </script>
-
     <link rel="stylesheet" href="template/assets/css/normalize.css">
     <link rel="stylesheet" href="template/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="template/assets/css/font-awesome.min.css">
@@ -60,53 +46,7 @@
           <p>Pas encore de compte ?</p>
         </div>
 
-
-        <!-- on fait appel à la fonction js écrite plus haut pour afficher le formulaire d'inscription (par défaut cachés) -->
-        <div class="register-link m-t-15 text-center">
-          <input id="button1" type="button" value="Incrivez-vous" onclick="javascript:visibilite('signUp'); return false;" />
-        </div>
-
       </form>
-    </div>
-  </div>
-
-
-<!-- Formulaire d'inscription -->
-  <div class="login-content">
-    <div id="signUp" style="display: none;">
-      <div class="login-content">
-        <div class="card-header">
-          <h1>S'inscrire</h1>
-        </div>
-        <div class="login-form">
-          <form action = "index.php" method="post" class="form-horizontal">
-            <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nameCoachInscr" placeholder="Nom" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="firstNameCoachInscri" placeholder="Prénom" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="emailCoachInscr" placeholder="Adresse mail" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Numéro de téléphone</label>
-              <input type="number" name="phoneNumberCoachInscr" placeholder="Numéro de téléphone" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Mot de passe</label>
-              <input type="password" name="passwordInscr" placeholder="Mot de passe" class="form-control">
-            </div>
-
-
-            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">S'inscrire</button>
-
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 
