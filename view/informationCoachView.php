@@ -33,19 +33,19 @@
           <form action = "informationCoach.php" method="post" class="form-horizontal">
             <div class="form-group">
               <label>Nom</label>
-              <input type="text" name="name" class="form-control" <?php echo 'value="'. $name .'"'; ?>>
+              <input type="text" name="name" class="form-control" <?php echo 'value="'. htmlspecialchars($name) .'"'; ?>>
             </div>
             <div class="form-group">
               <label>Prénom</label>
-              <input type="text" name="firstname" class="form-control" <?php echo 'value="'. $firstname .'"'; ?> >
+              <input type="text" name="firstname" class="form-control" <?php echo 'value="'. htmlspecialchars($firstname) .'"'; ?> >
             </div>
             <div class="form-group">
               <label>Adresse mail</label>
-              <input type="email" name="email" class="form-control"  <?php echo 'value="'. $email .'"'; ?>>
+              <input type="email" name="email" class="form-control"  <?php echo 'value="'. htmlspecialchars($email) .'"'; ?>>
             </div>
             <div class="form-group">
               <label>Téléphone</label>
-              <input type="number" name="phone" class="form-control"  <?php echo 'value="'. $phone .'"'; ?>>
+              <input type="number" name="phone" class="form-control"  <?php echo 'value="'. htmlspecialchars($phone) .'"'; ?>>
             </div>
             <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Enregistrer</button>
           </form>

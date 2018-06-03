@@ -81,23 +81,23 @@
         <!-- Formulaire de modification des données du joueur -->
         <form id="formUpPlayer" class = "form-group" action = "player.php?idPlayer=<?php echo htmlspecialchars($dataPlayer['identifiantJoueur']); ?>" method="post" style="display: none;">
           <div class="form-row">
-            <div class="col"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. $dataPlayer['nomJoueur'] .'"'; ?> placeholder="Nom" class="form-control"> </div>
-            <div class="col"><input type="text" name="namePlayerUp" <?php echo 'value="'. $dataPlayer['prenomJoueur'] .'"'; ?> placeholder="Prénom" class="form-control"> </div>
+            <div class="col"><input type="text" name="firstnamePlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['nomJoueur']) .'"'; ?> placeholder="Nom" class="form-control"> </div>
+            <div class="col"><input type="text" name="namePlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['prenomJoueur']) .'"'; ?> placeholder="Prénom" class="form-control"> </div>
           </div>
           <br>
-          <div class="form-group"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. $dataPlayer['dateNaissanceJoueur'] .'"'; ?> placeholder="Date naissance AAAA-MM-JJ" class="form-control"> </div>
-          <div class="form-group"><input type="text" name="genderPlayerUp" <?php echo 'value="'. $dataPlayer['sexeJoueur'] .'"'; ?> placeholder="Sexe" class="form-control"> </div>
+          <div class="form-group"><input type="date" name="birthdayPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['dateNaissanceJoueur']) .'"'; ?> placeholder="Date naissance AAAA-MM-JJ" class="form-control"> </div>
+          <div class="form-group"><input type="text" name="genderPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['sexeJoueur']) .'"'; ?> placeholder="Sexe" class="form-control"> </div>
 
           <div class="form-row">
-            <div class="col"><input type="text" name="addressPlayerUp" <?php echo 'value="'. $dataPlayer['rueJoueur'] .'"'; ?> placeholder="Rue" class="form-control"> </div>
-            <div class="col"><input type="number" name="codePostalJoueurUp" <?php echo 'value="'. $dataPlayer['codePostalJoueur'] .'"'; ?> placeholder="Code postal" class="form-control"> </div>
-            <div class="col"><input type="text" name="cityPlayerUp" <?php echo 'value="'. $dataPlayer['villeJoueur'] .'"'; ?> placeholder="Ville" class="form-control"> </div>
+            <div class="col"><input type="text" name="addressPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['rueJoueur']) .'"'; ?> placeholder="Rue" class="form-control"> </div>
+            <div class="col"><input type="number" name="codePostalJoueurUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['codePostalJoueur']) .'"'; ?> placeholder="Code postal" class="form-control"> </div>
+            <div class="col"><input type="text" name="cityPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['villeJoueur']) .'"'; ?> placeholder="Ville" class="form-control"> </div>
           </div>
 
           <br>
           <div class="form-row">
-            <div class="col"><input type="email" name="emailPlayerUp" <?php echo 'value="'. $dataPlayer['emailJoueur'] .'"'; ?> placeholder="email" class="form-control"> </div>
-            <div class="col"><input type="number" name="numberPlayerUp" <?php echo 'value="'. $dataPlayer['telephoneJoueur'] .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
+            <div class="col"><input type="email" name="emailPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['emailJoueur']) .'"'; ?> placeholder="email" class="form-control"> </div>
+            <div class="col"><input type="number" name="numberPlayerUp" <?php echo 'value="'. htmlspecialchars($dataPlayer['telephoneJoueur']) .'"'; ?> placeholder="Téléphone" class="form-control"> </div>
           </div>
           <?php $identPlayer = $dataPlayer['identifiantJoueur']; ?>
           <br>
@@ -164,7 +164,7 @@
                   while ($data = $seasonLicence->fetch())
                   {
                 ?>
-                    <option <?php echo 'value="'. $data['identifiantSaison'] .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
+                    <option <?php echo 'value="'. htmlspecialchars($data['identifiantSaison']) .'"'; ?> > <?= htmlspecialchars($data['dateDebutSaison']) . "/" . htmlspecialchars($data['dateFinSaison']) ?> </option>
                 <?php
                   }
                   $seasonLicence->closeCursor();
@@ -177,7 +177,7 @@
                   while ($data = $teamLicence->fetch())
                   {
                 ?>
-                    <option <?php echo 'value="'. $data['identifiantEquipe'] .'"'; ?> > <?= htmlspecialchars($data['nomEquipe']) ?> </option>
+                    <option <?php echo 'value="'. htmlspecialchars($data['identifiantEquipe']) .'"'; ?> > <?= htmlspecialchars($data['nomEquipe']) ?> </option>
                 <?php
                   }
                   $teamLicence->closeCursor();

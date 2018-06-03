@@ -172,7 +172,7 @@
                       while ($data = $coachTeamInsert->fetch())
                       {
                     ?>
-                        <option <?php echo 'value="'. $data['identifiantEntraineur'] .'"'; ?> > <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur']) ?> </option>
+                        <option <?php echo 'value="'. htmlspecialchars($data['identifiantEntraineur']) .'"'; ?> > <?= htmlspecialchars($data['nomEntraineur']) . " " . htmlspecialchars($data['prenomEntraineur']) ?> </option>
                     <?php
                       }
                       $coachTeamInsert->closeCursor();
