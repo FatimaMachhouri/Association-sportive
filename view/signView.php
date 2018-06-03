@@ -41,11 +41,6 @@
 
         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Se connecter</button>
 
-        <!--Pour permettre à quelqu'un soit de se connecter (ci-dessus) soit de s'inscrire (ci-dessous) -->
-        <div class="register-link m-t-15 text-center">
-          <p>Pas encore de compte ?</p>
-        </div>
-
       </form>
     </div>
   </div>
