@@ -52,6 +52,20 @@
         </div>
       </div>
 
+      <div class="login-content">
+        <div class="card-header">
+          <h1> Modifier mon mot de passe </h1>
+        <div class="login-form">
+          <form action = "informationCoach.php" method="post" class="form-horizontal">
+            <div class="form-group">
+              <label>Mot de passe</label>
+              <input type="text" name="psswd" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Modifier</button>
+          </form>
+        </div>
+      </div>
+
       </div>
     </div> <!-- content -->
   </div> <!-- right panel -->

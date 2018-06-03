@@ -10,6 +10,14 @@
   }//updatePlayer permet de mettre à jour les informations d'un coach
 
 
+  function updatePassword($idCoach, $password) {
+    $db = dbConnection();
+    $password = $db->prepare ( ' UPDATE "AssociationSportive"."Entraineur" SET "password" = ? WHERE "identifiantEntraineur" = ? ');
+    $password->execute(array($password, $idCoach));
+    return $password;
+  }//updatePlayer permet de mettre à jour le mot de passe d'un coach
+
+
   function getCoach($idCoach) {
     $db = dbConnection();
     $player = $db->prepare ( ' SELECT * FROM "AssociationSportive"."Entraineur" WHERE "identifiantEntraineur" = ? ');

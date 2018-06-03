@@ -12,9 +12,16 @@
 
   else {
 
-    if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) ) {
+    if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['psswd'])) {
       $updateInformation = updateCoach($_COOKIE['identifiantCookie'], $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone']);
     }
+
+
+    if ( isset($_POST['psswd']) )   {
+      $updatePsswd = updatePassword( $_COOKIE['identifiantCookie'], hash('sha512', $_POST['psswd']) );
+    }
+
+
 
     $coach = getCoach($_COOKIE['identifiantCookie']);
 
@@ -23,7 +30,6 @@
       $firstname = $data['prenomEntraineur'];
       $email = $data['emailEntraineur'];
       $phone = $data['telephoneEntraineur'];
-      $password = $data['password'];
     }
     $coach->closeCursor();
 
