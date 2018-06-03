@@ -4,7 +4,7 @@
 
   function inscription($name, $firstname, $email, $phone, $password) {
     $db = dbConnection();
-    $coach = $db->prepare ( ' INSERT INTO "AssociationSportive"."Entraineur" ("nomEntraineur", "prenomEntraineur", "emailEntraineur", "telephoneEntraineur") VALUES(?,?,?,?)');
+    $coach = $db->prepare ( ' INSERT INTO "AssociationSportive"."Entraineur" ("nomEntraineur", "prenomEntraineur", "emailEntraineur", "telephoneEntraineur", "password") VALUES(?,?,?,?,?)');
     $coach->execute(array($name, $firstname, $email, $phone, $password));
     return $coach;
   }//insertCoach permet de s'inscrire lorsqu'on est sur la page de connexion

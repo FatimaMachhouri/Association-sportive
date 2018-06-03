@@ -13,7 +13,7 @@
   else {
 
     if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['email']) && isset($_POST['phone']) ) {
-      $updateInformation = updateCoach( $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone'], $_COOKIE['identifiantCookie']);
+      $updateInformation = updateCoach($_COOKIE['identifiantCookie'], $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['phone']);
     }
 
     $coach = getCoach($_COOKIE['identifiantCookie']);
